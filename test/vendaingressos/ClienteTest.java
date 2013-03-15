@@ -172,7 +172,7 @@ public class ClienteTest {
      * Test of setSaldo method, of class Cliente.
      */
     @Test
-    public void testSetSaldo() {
+    public void testSetSaldo(){
         System.out.println("setSaldo");
         double saldo = 700;
         Cliente c9 = new Cliente("Maria", "9014871", "emaildamaria@gmail.com","senhadamaria", 400, false);
@@ -186,9 +186,11 @@ public class ClienteTest {
     public void testToString() {
         System.out.println("toString");
         Cliente c0 = new Cliente("Maria", "9014871", "emaildamaria@gmail.com","senhadamaria", 400, false);
-        String expResult = "Nome: "+c0.getNome()+", CPF: "+c0.getCpf() +", Email: "+ c0.getEmail()+ ", Saldo: "+ c0.getSaldo()+ ", Estudante: "+ c0.isEspecial();
+        String expResult = "Nome: "+c0.getNome()+", CPF: "+c0.getCpf() +", Email: "+ c0.getEmail()+", Saldo: "+ c0.getSaldo()+ ", Especial: "+ c0.isEspecial();
         String result = c0.toString();
         assertEquals(expResult, result);
+        
+        //return "Nome: " + nome + ", CPF: " + cpf + ", Email: " + email + ", Saldo: " + saldo + ", Especial: " + especial;
     }
 
     /**
