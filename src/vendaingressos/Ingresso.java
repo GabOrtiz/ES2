@@ -74,7 +74,7 @@ public class Ingresso {
 
     @Override
     public String toString() {
-        return "Filme: "+nome+", R$: "+valor+ " Classificação: "+ classificacao+ "Duração: "+ duracao+ " Ingressos Disponíveis: "+ quantidade;
+        return "Filme: "+nome+", R$: "+valor+ ", Classificação: "+ classificacao+ ", Duração: "+ duracao+ ", Ingressos Disponíveis: "+ quantidade;
     }
     
     
