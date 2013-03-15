@@ -91,7 +91,8 @@ public class IngressoTest {
     public void testToString() {
         System.out.println("toString");
         Ingresso i = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16);
-        String expResult = "Evento: "+i.getNome()+", R$: "+i.getValor() +" Quantidade: "+ i.getQuantidade();
+        String expResult = "Filme: "+i.getNome()+", R$: "+i.getValor() +", Classificação: "+i.getClassificacao()+", Duração: "+i.getDuracao()+", Ingressos Disponíveis: "+ i.getQuantidade();
+        //return "Filme: "+nome+", R$: "+valor+ " Classificação: "+ classificacao+ "Duração: "+ duracao+ " Ingressos Disponíveis: "+ quantidade;
         String result = i.toString();
         assertEquals(expResult, result);
 
