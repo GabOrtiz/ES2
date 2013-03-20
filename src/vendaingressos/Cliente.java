@@ -13,7 +13,7 @@ public class Cliente {
     private double saldo;
     private boolean especial;
 
-    public Cliente(String nome, String cpf, String email,String senha, double saldo, boolean especial) {
+    public Cliente(String nome, String cpf, String email,String senha, double saldo, boolean especial){
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
@@ -22,12 +22,12 @@ public class Cliente {
         this.especial = especial;
     }
 
-    public boolean isEspecial() {
-        if(especial == true){ 
+    public boolean isEspecial(){
+        if(especial == true){
             System.out.println("especial.");
             return true;
         }
-        else 
+        else
             System.out.println("normal.");
             return false;
     }
