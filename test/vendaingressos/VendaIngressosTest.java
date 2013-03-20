@@ -15,17 +15,17 @@ import static org.junit.Assert.*;
  *
  * @author aluno
  */
-public class VendaIngressosTest {
+public class VendaIngressosTest{
     
-    public VendaIngressosTest() {
+    public VendaIngressosTest(){
     }
     
     @BeforeClass
-    public static void setUpClass() {
+    public static void setUpClass(){
     }
     
     @AfterClass
-    public static void tearDownClass() {
+    public static void tearDownClass(){
     }
     
     @Before

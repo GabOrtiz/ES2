@@ -8,7 +8,7 @@ package vendaingressos;
  *
  * @author aluno
  */
-public class Ingresso {
+public class Ingresso{
     private String nome, sinopse;
     private double valor, duracao;
     private int quantidade, classificacao;

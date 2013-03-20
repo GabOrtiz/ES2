@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  *
  * @author aluno
  */
-public class VendaIngressos {
+public class VendaIngressos{
 
     /**
      * @param args the command line arguments
