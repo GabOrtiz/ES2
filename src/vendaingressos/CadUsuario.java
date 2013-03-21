@@ -17,6 +17,7 @@ public class CadUsuario extends javax.swing.JFrame {
      */
     public CadUsuario() {
         initComponents();
+        
     }
 
     
@@ -44,8 +45,8 @@ public class CadUsuario extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         fieldEmail = new javax.swing.JTextField();
         fieldSenha = new javax.swing.JTextField();
-        Bcadastrar = new javax.swing.JToggleButton();
         Bcancelar = new javax.swing.JButton();
+        Bcadastrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ingressos Gambiarra");
@@ -142,17 +143,17 @@ public class CadUsuario extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Bcadastrar.setText("Cadastrar");
-        Bcadastrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BcadastrarActionPerformed(evt);
-            }
-        });
-
         Bcancelar.setText("Cancelar");
         Bcancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BcancelarActionPerformed(evt);
+            }
+        });
+
+        Bcadastrar.setText("Cadastrar");
+        Bcadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BcadastrarActionPerformed(evt);
             }
         });
 
@@ -170,7 +171,7 @@ public class CadUsuario extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
+                        .addGap(59, 59, 59)
                         .addComponent(Bcadastrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Bcancelar)
@@ -188,23 +189,13 @@ public class CadUsuario extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Bcadastrar)
-                    .addComponent(Bcancelar))
+                    .addComponent(Bcancelar)
+                    .addComponent(Bcadastrar))
                 .addGap(19, 19, 19))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void BcadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcadastrarActionPerformed
-         Cliente c = new Cliente(fieldNome.getText(), fieldCPF.getText(), fieldEmail.getText(),fieldSenha.getText(), Double.parseDouble(fieldSaldo.getText()), especial.isSelected());
-         clientes.add(c);
-         
-         
-            
-            this.setVisible(false);
-            
-    }//GEN-LAST:event_BcadastrarActionPerformed
 
     private void BcancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcancelarActionPerformed
         for(Cliente c: clientes){
@@ -213,6 +204,19 @@ public class CadUsuario extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_BcancelarActionPerformed
+
+    private void BcadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcadastrarActionPerformed
+            Cliente c = new Cliente(fieldNome.getText(), fieldCPF.getText(), fieldEmail.getText(),fieldSenha.getText(), Double.parseDouble(fieldSaldo.getText()), especial.isSelected());
+        clientes.add(c);
+
+        fieldNome.setText("");
+        fieldCPF.setText("");
+        fieldEmail.setText("");
+        fieldSenha.setText("");
+        fieldSaldo.setText("");
+
+        this.setVisible(false);
+    }//GEN-LAST:event_BcadastrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -249,7 +253,7 @@ public class CadUsuario extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton Bcadastrar;
+    private javax.swing.JButton Bcadastrar;
     private javax.swing.JButton Bcancelar;
     private javax.swing.JRadioButton especial;
     private javax.swing.JTextField fieldCPF;

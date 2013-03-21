@@ -156,7 +156,16 @@ public class CadFilme extends javax.swing.JFrame {
     private void BcadFilmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcadFilmeActionPerformed
         Ingresso i = new Ingresso(nomeFilme.getText(), fieldSinopse.getText(), Double.parseDouble(fieldValor.getText()), Double.parseDouble(fieldDuracao.getText()), Integer.parseInt(fieldIngressos.getText()), Integer.parseInt(fieldClassificacao.getText()));
         ingressos.add(i);
-        this.dispose(); 
+        
+        nomeFilme.setText("");
+        fieldSinopse.setText("");
+        fieldValor.setText("");
+        fieldDuracao.setText("");
+        fieldIngressos.setText("");
+        fieldClassificacao.setText("");
+        
+        
+        this.setVisible(false);
     }//GEN-LAST:event_BcadFilmeActionPerformed
 
     private void BcancCadFilmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcancCadFilmeActionPerformed
