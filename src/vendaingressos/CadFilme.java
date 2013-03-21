@@ -4,6 +4,8 @@
  */
 package vendaingressos;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Ortiz
@@ -16,6 +18,8 @@ public class CadFilme extends javax.swing.JFrame {
     public CadFilme() {
         initComponents();
     }
+    
+    ArrayList<Ingresso> ingressos = new ArrayList<Ingresso>();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -60,8 +64,18 @@ public class CadFilme extends javax.swing.JFrame {
         jLabel6.setText("Classificação:");
 
         BcadFilme.setText("Cadastrar");
+        BcadFilme.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BcadFilmeActionPerformed(evt);
+            }
+        });
 
         BcancCadFilme.setText("Cancelar");
+        BcancCadFilme.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BcancCadFilmeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -138,6 +152,20 @@ public class CadFilme extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BcadFilmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcadFilmeActionPerformed
+        Ingresso i = new Ingresso(nomeFilme.getText(), fieldSinopse.getText(), Double.parseDouble(fieldValor.getText()), Double.parseDouble(fieldDuracao.getText()), Integer.parseInt(fieldIngressos.getText()), Integer.parseInt(fieldClassificacao.getText()));
+        ingressos.add(i);
+        this.dispose(); 
+    }//GEN-LAST:event_BcadFilmeActionPerformed
+
+    private void BcancCadFilmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcancCadFilmeActionPerformed
+        for(Ingresso i: ingressos){
+            System.out.println(i.toString());
+            
+        }
+        this.dispose(); 
+    }//GEN-LAST:event_BcancCadFilmeActionPerformed
 
     /**
      * @param args the command line arguments
