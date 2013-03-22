@@ -13,8 +13,12 @@ public class CompraIngresso extends javax.swing.JFrame {
     /**
      * Creates new form CompraIngresso
      */
-    public CompraIngresso() {
+    public CompraIngresso(){
+        
         initComponents();
+        
+        //VendaIngressos.ingressos
+        
     }
 
     /**
@@ -33,8 +37,6 @@ public class CompraIngresso extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         boxFilmes = new javax.swing.JComboBox();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        listaFilmes = new javax.swing.JList();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ingressos Gambiarra");
@@ -49,24 +51,12 @@ public class CompraIngresso extends javax.swing.JFrame {
 
         jLabel2.setText("Informações:");
 
-        boxFilmes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        atualizar();
         boxFilmes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boxFilmesActionPerformed(evt);
             }
         });
-
-        listaFilmes.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        listaFilmes.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
-            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                listaFilmesValueChanged(evt);
-            }
-        });
-        jScrollPane1.setViewportView(listaFilmes);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -83,20 +73,14 @@ public class CompraIngresso extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(boxFilmes, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(boxFilmes, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(57, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(57, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,13 +89,14 @@ public class CompraIngresso extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(boxFilmes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
+                        .addGap(28, 28, 28)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Bcomprar)
                     .addComponent(BCancelarCompra))
@@ -121,25 +106,16 @@ public class CompraIngresso extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
+    private void atualizar(){
+        System.out.println("oi");
+         for(Ingresso i: VendaIngressos.ingressos){
+            boxFilmes.addItem(i);
+        }
+    }
     
     private void boxFilmesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxFilmesActionPerformed
-        for(Ingresso i: VendaIngressos.ingressos){
-            boxFilmes.add(i.getNome(), i);
-            
-            
-        }
-        //        boxFilmes.addItem(VendaIngressos.ingressos);
-//        boxFilmes.add(VendaIngressos.ingressos., this)
+        jTextPane1.setText(boxFilmes.getSelectedItem().toString());
     }//GEN-LAST:event_boxFilmesActionPerformed
-
-    private void listaFilmesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaFilmesValueChanged
-        for(Ingresso i: VendaIngressos.ingressos){
-            listaFilmes.add(i.getNome(), VendaIngressos.ingressos.get(i));           //add(i.getNome(), i);
-            listaFilmes.setListData(VendaIngressos.ingressos[i]);
-        }
-    }//GEN-LAST:event_listaFilmesValueChanged
-
     /**
      * @param args the command line arguments
      */
@@ -168,7 +144,7 @@ public class CompraIngresso extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        java.awt.EventQueue.invokeLater(new Runnable(){
             public void run() {
                 new CompraIngresso().setVisible(true);
             }
@@ -180,9 +156,7 @@ public class CompraIngresso extends javax.swing.JFrame {
     private javax.swing.JComboBox boxFilmes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextPane jTextPane1;
-    private javax.swing.JList listaFilmes;
     // End of variables declaration//GEN-END:variables
 }
