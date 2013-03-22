@@ -165,7 +165,7 @@ public class ClienteTest {
         Cliente c8 = new Cliente("Maria", "9014871", "emaildamaria@gmail.com","senhadamaria", 400, false);
         double expResult = 400;
         double result = c8.getSaldo();
-        assertEquals(expResult, result, 0.0);      
+        assertEquals(expResult, result, 0.0);    
     }
 
     /**

@@ -20,8 +20,8 @@ public class Inicial extends javax.swing.JFrame {
         initComponents();
         
     }
-    //vish
-    ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+
+    
     
     CadUsuario frameusuario = new CadUsuario();
     CadFilme framefilme = new CadFilme();
@@ -134,13 +134,14 @@ public class Inicial extends javax.swing.JFrame {
                         .addComponent(jLabel4))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(cadFilme)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel3)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(31, 31, 31)
-                                    .addComponent(newCadastro))))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addComponent(newCadastro))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cadFilme, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -176,14 +177,16 @@ public class Inicial extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //vish
-        for(Cliente c: clientes){
+        for(Cliente c:VendaIngressos.clientes){
             if(c.getEmail().equalsIgnoreCase(fieldEmailLogin.getText())&& c.getSenha().equalsIgnoreCase(fieldSenhaLogin.getText())){
-            framecompra.setVisible(true); 
+            framecompra.setVisible(true);
             }
-            else JOptionPane.showMessageDialog(rootPane, "Erro");
-            
-        }
+          }
         
+        if(framecompra.isVisible() == false){
+        JOptionPane.showMessageDialog(rootPane, "Erro, cliente não cadastrado, ou senha/login errados.");
+        }
+            
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -214,7 +217,7 @@ public class Inicial extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        java.awt.EventQueue.invokeLater(new Runnable(){
             public void run() {
                 new Inicial().setVisible(true);
             }

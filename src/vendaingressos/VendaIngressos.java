@@ -18,6 +18,12 @@ public class VendaIngressos{
     /**
      * @param args the command line arguments
      */
+    
+    
+    public static ArrayList<Cliente> clientes = new ArrayList<Cliente>();  //cadastro de clientes
+    public static ArrayList<Ingresso> ingressos = new ArrayList<Ingresso>();  //cadastro de ingressos    
+         
+         
     public static void main(String[] args) {
         // TODO code application logic here
          Scanner scan = new Scanner(System.in);
@@ -28,13 +34,12 @@ public class VendaIngressos{
          StringBuilder ING = new StringBuilder();
         
         
-         ArrayList<Cliente> clientes = new ArrayList<Cliente>();  //cadastro de clientes
-         ArrayList<Ingresso> ingressos = new ArrayList<Ingresso>();  //cadastro de ingressos
+//         ArrayList<Cliente> clientes = new ArrayList<Cliente>();  //cadastro de clientes
+//         ArrayList<Ingresso> ingressos = new ArrayList<Ingresso>();  //cadastro de ingressos
          
          String valor;
          int val;
-         
-         
+                  
          do {
             //menu principal
             valor = JOptionPane.showInputDialog(null, "1 - Cadastrar " + "\n"
