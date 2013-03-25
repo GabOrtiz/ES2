@@ -13,19 +13,22 @@ import javax.swing.JOptionPane;
  */
 public class Inicial extends javax.swing.JFrame {
 
+    
+    public static Cliente Caux;
+    public static Ingresso Iaux;
     /**
      * Creates new form Inicial
      */
-    public Inicial() {
+    public Inicial(){
         initComponents();
         
     }
 
     
     
-    CadUsuario frameusuario = new CadUsuario();
-    CadFilme framefilme = new CadFilme();
-    CompraIngresso framecompra = new CompraIngresso();
+    CadUsuario frameusuario  = new CadUsuario();
+    //CadFilme framefilme  = new CadFilme();
+    //CompraIngresso framecompra = new CompraIngresso();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,7 +43,7 @@ public class Inicial extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         fieldEmailLogin = new javax.swing.JTextField();
         fieldSenhaLogin = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        Logar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         newCadastro = new javax.swing.JButton();
         cadFilme = new javax.swing.JButton();
@@ -57,10 +60,10 @@ public class Inicial extends javax.swing.JFrame {
 
         fieldSenhaLogin.setText("jPasswordField1");
 
-        jButton1.setText("Logar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Logar.setText("Logar");
+        Logar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                LogarActionPerformed(evt);
             }
         });
 
@@ -84,7 +87,7 @@ public class Inicial extends javax.swing.JFrame {
                 .addGap(20, 20, 20))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(Logar)
                 .addGap(70, 70, 70))
         );
         jPanel1Layout.setVerticalGroup(
@@ -99,9 +102,12 @@ public class Inicial extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(fieldSenhaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(Logar)
                 .addContainerGap(21, Short.MAX_VALUE))
         );
+
+        fieldEmailLogin.getAccessibleContext().setAccessibleParent(fieldEmailLogin);
+        fieldSenhaLogin.getAccessibleContext().setAccessibleParent(fieldSenhaLogin);
 
         jLabel3.setText("Você não possui cadastro?");
 
@@ -167,27 +173,32 @@ public class Inicial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void newCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newCadastroActionPerformed
-        frameusuario.setVisible(true); 
+        new CadUsuario().setVisible(true);
+        //frameusuario.setVisible(true); 
     }//GEN-LAST:event_newCadastroActionPerformed
 
     private void cadFilmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadFilmeActionPerformed
-        framefilme.setVisible(true); 
+        //framefilme.setVisible(true); 
+        new CadFilme().setVisible(true);
+        
           
     }//GEN-LAST:event_cadFilmeActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void LogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogarActionPerformed
         //vish
         for(Cliente c:VendaIngressos.clientes){
             if(c.getEmail().equalsIgnoreCase(fieldEmailLogin.getText())&& c.getSenha().equalsIgnoreCase(fieldSenhaLogin.getText())){
-            framecompra.setVisible(true);
+            new CompraIngresso().setVisible(true);
+             //CompraIngresso framecompra = new CompraIngresso();
+             Caux = c;
             }
           }
         
-        if(framecompra.isVisible() == false){
+        if(this.isVisible() == false){
         JOptionPane.showMessageDialog(rootPane, "Erro, cliente não cadastrado, ou senha/login errados.");
         }
             
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_LogarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,10 +235,10 @@ public class Inicial extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Logar;
     private javax.swing.JButton cadFilme;
     private javax.swing.JTextField fieldEmailLogin;
     private javax.swing.JPasswordField fieldSenhaLogin;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
