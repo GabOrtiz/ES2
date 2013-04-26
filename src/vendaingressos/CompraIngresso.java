@@ -4,20 +4,23 @@
  */
 package vendaingressos;
 
+import java.awt.GridLayout;
+import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 /**
  *
  * @author Ortiz
  */
 public class CompraIngresso extends javax.swing.JFrame {
-
-    /**
-     * Creates new form CompraIngresso
-     */
+    
+    
+    
     public CompraIngresso(){
         
         initComponents();
         
-        //VendaIngressos.ingressos
         
     }
 
@@ -39,13 +42,23 @@ public class CompraIngresso extends javax.swing.JFrame {
         boxFilmes = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Ingressos Gambiarra");
+        setTitle("Cine Totem");
 
         jScrollPane2.setViewportView(jTextPane1);
 
         Bcomprar.setText("Comprar");
+        Bcomprar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BcomprarActionPerformed(evt);
+            }
+        });
 
         BCancelarCompra.setText("Cancelar");
+        BCancelarCompra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BCancelarCompraActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Filme:");
 
@@ -63,24 +76,21 @@ public class CompraIngresso extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addComponent(Bcomprar)
-                .addGap(122, 122, 122)
-                .addComponent(BCancelarCompra)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(boxFilmes, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(57, Short.MAX_VALUE))))
+                    .addComponent(boxFilmes, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(58, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(77, 77, 77)
+                .addComponent(Bcomprar)
+                .addGap(122, 122, 122)
+                .addComponent(BCancelarCompra)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,23 +101,23 @@ public class CompraIngresso extends javax.swing.JFrame {
                     .addComponent(boxFilmes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
-                        .addGap(28, 28, 28)))
+                    .addComponent(jLabel2)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Bcomprar)
                     .addComponent(BCancelarCompra))
-                .addGap(35, 35, 35))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void atualizar(){
-        System.out.println("oi");
+        for(Cliente c: VendaIngressos.clientes){
+            System.out.println(c.toString());
+        }
+        
          for(Ingresso i: VendaIngressos.ingressos){
             boxFilmes.addItem(i);
         }
@@ -116,6 +126,36 @@ public class CompraIngresso extends javax.swing.JFrame {
     private void boxFilmesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxFilmesActionPerformed
         jTextPane1.setText(boxFilmes.getSelectedItem().toString());
     }//GEN-LAST:event_boxFilmesActionPerformed
+
+    private void BCancelarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BCancelarCompraActionPerformed
+            this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_BCancelarCompraActionPerformed
+
+    private void BcomprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcomprarActionPerformed
+        double precoaux = 0;
+        
+        for(Ingresso i:VendaIngressos.ingressos){
+            if(i.equals(boxFilmes.getSelectedItem())){
+                Inicial.Iaux = i;
+                i.getSala();
+            }
+        }
+        
+                
+        for(Cliente c:VendaIngressos.clientes){
+            if(c == Inicial.Caux && c.getSaldo() >= Inicial.Iaux.getValor() && Inicial.Iaux.getQuantidade()>=1){
+            c.setSaldo(c.getSaldo() - Inicial.Iaux.getValor());
+            
+            
+            for(Ingresso i:VendaIngressos.ingressos){
+                if((i.equals(Inicial.Iaux))){
+                    i.setQuantidade(i.getQuantidade()-1);
+                }
+           }
+         }
+        }
+        this.dispose();
+    }//GEN-LAST:event_BcomprarActionPerformed
     /**
      * @param args the command line arguments
      */

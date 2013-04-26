@@ -90,8 +90,8 @@ public class VendaIngressos{
                             int qtd =  Integer.parseInt(JOptionPane.showInputDialog("Quantidade: "));
                             int cla =  Integer.parseInt(JOptionPane.showInputDialog("Classificação: "));
                             // public Ingresso(String nome, String sinopse, double valor, double duracao, int quantidade, int classificacao) {
-                            Ingresso ingr = new Ingresso(ni, si, pi, du, qtd, cla);
-                            ingressos.add(ingr);
+                            //Ingresso ingr = new Ingresso(ni, si, pi, du, qtd, cla);
+                            //ingressos.add(ingr);
                             
                             break;
                             
@@ -127,7 +127,6 @@ public class VendaIngressos{
                                 c.setSaldo(c.getSaldo() - (preco / 2));
                             }
                             else c.setSaldo(c.getSaldo() - preco);
-                            
                         }
                     }
                     break;

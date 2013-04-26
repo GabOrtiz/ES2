@@ -12,14 +12,21 @@ public class Ingresso{
     private String nome, sinopse;
     private double valor, duracao;
     private int quantidade, classificacao;
+    private Sala sala;
 
-    public Ingresso(String nome, String sinopse, double valor, double duracao, int quantidade, int classificacao) {
+    public Ingresso(String nome, String sinopse, double valor, double duracao, int quantidade, int classificacao,Sala sala) {
         this.nome = nome;
         this.sinopse = sinopse;
         this.valor = valor;
         this.duracao = duracao;
         this.quantidade = quantidade;
         this.classificacao = classificacao;
+        this.sala = new Sala();
+    }
+    
+    
+    public void getSala(){
+        this.sala.setVisible(true);
     }
 
     public int getQuantidade(){
@@ -68,6 +75,10 @@ public class Ingresso{
 
     public void setClassificacao(int classificacao) {
         this.classificacao = classificacao;
+    }
+    
+    public void resetSala(){
+        this.sala = new Sala();
     }
     
     

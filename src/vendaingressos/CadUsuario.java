@@ -18,6 +18,8 @@ public class CadUsuario extends javax.swing.JFrame {
     public CadUsuario() {
         initComponents();
         
+        Cliente c = new Cliente("Maria", "9014871", "a","a", 400, false);
+        VendaIngressos.clientes.add(c);
     }
 
     
@@ -49,7 +51,7 @@ public class CadUsuario extends javax.swing.JFrame {
         Bcadastrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Ingressos Gambiarra");
+        setTitle("Cine Totem");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Informações Pessoais"));
 
@@ -197,9 +199,10 @@ public class CadUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BcancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcancelarActionPerformed
-           for(Cliente c: VendaIngressos.clientes){
-             System.out.println(c.toString());
-        }
+//           for(Cliente c: VendaIngressos.clientes){
+//             System.out.println(c.toString());
+//        }
+        this.dispose(); 
         
         
     }//GEN-LAST:event_BcancelarActionPerformed

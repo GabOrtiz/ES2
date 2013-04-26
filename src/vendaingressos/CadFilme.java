@@ -10,16 +10,28 @@ import java.util.ArrayList;
  *
  * @author Ortiz
  */
-public class CadFilme extends javax.swing.JFrame {
+public class CadFilme extends javax.swing.JFrame{
 
     /**
      * Creates new form CadFilme
      */
-    public CadFilme() {
+    
+    public CadFilme(){
         initComponents();
+        
+
+        Ingresso i = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16, new Sala());
+        VendaIngressos.ingressos.add(i);
+        
+        Ingresso i1 = new Ingresso("Star Wars ep2","Luke, i´m your father muahaha ", 15,150, 100, 16, new Sala());
+        VendaIngressos.ingressos.add(i1);
+        
+        Ingresso i2 = new Ingresso("Star Wars ep3","Luke, i´m your father co cof  *morreu* ", 15,150, 100, 16, new Sala());
+        VendaIngressos.ingressos.add(i2);
+        
     }
     
-    ArrayList<Ingresso> ingressos = new ArrayList<Ingresso>();
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -47,7 +59,7 @@ public class CadFilme extends javax.swing.JFrame {
         BcancCadFilme = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Ingressos Gambiarra");
+        setTitle("Cine Totem");
 
         jLabel1.setText("Nome:");
 
@@ -60,6 +72,8 @@ public class CadFilme extends javax.swing.JFrame {
         jLabel4.setText("Duração em mins:");
 
         jLabel5.setText("Ingressos:");
+
+        fieldIngressos.setText("150");
 
         jLabel6.setText("Classificação:");
 
@@ -154,22 +168,25 @@ public class CadFilme extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BcadFilmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcadFilmeActionPerformed
-        Ingresso i = new Ingresso(nomeFilme.getText(), fieldSinopse.getText(), Double.parseDouble(fieldValor.getText()), Double.parseDouble(fieldDuracao.getText()), Integer.parseInt(fieldIngressos.getText()), Integer.parseInt(fieldClassificacao.getText()));
-        ingressos.add(i);
+        Ingresso in = new Ingresso(nomeFilme.getText(), fieldSinopse.getText(), 
+                Double.parseDouble(fieldValor.getText()), Double.parseDouble(fieldDuracao.getText()), 
+                Integer.parseInt(fieldIngressos.getText()), Integer.parseInt(fieldClassificacao.getText()),new Sala());
         
+        
+        VendaIngressos.ingressos.add(in);
+
         nomeFilme.setText("");
         fieldSinopse.setText("");
         fieldValor.setText("");
         fieldDuracao.setText("");
         fieldIngressos.setText("");
         fieldClassificacao.setText("");
-        
-        
-        this.setVisible(false);
+
+        this.dispose();
     }//GEN-LAST:event_BcadFilmeActionPerformed
 
     private void BcancCadFilmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcancCadFilmeActionPerformed
-        for(Ingresso i: ingressos){
+        for(Ingresso i: VendaIngressos.ingressos){
             System.out.println(i.toString());
             
         }

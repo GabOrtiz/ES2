@@ -21,7 +21,7 @@ public class Inicial extends javax.swing.JFrame {
      */
     public Inicial(){
         initComponents();
-        
+
     }
 
     
@@ -50,7 +50,7 @@ public class Inicial extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Ingressos Gambiarra");
+        setTitle("Cine Totem");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Login"));
 
@@ -191,6 +191,7 @@ public class Inicial extends javax.swing.JFrame {
             new CompraIngresso().setVisible(true);
              //CompraIngresso framecompra = new CompraIngresso();
              Caux = c;
+             fieldSenhaLogin.setText("");
             }
           }
         
