@@ -61,10 +61,11 @@
                           <Component id="BcadFilme" min="-2" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="fieldIngressos" min="-2" pref="60" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="Bexcluir" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="BcancCadFilme" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
@@ -100,7 +101,6 @@
               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="fieldIngressos" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="fieldClassificacao" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -108,6 +108,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="BcadFilme" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="BcancCadFilme" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Bexcluir" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -154,12 +155,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Ingressos:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="fieldIngressos">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="150"/>
+        <Property name="text" type="java.lang.String" value="Ingressos: 150"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
@@ -183,6 +179,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BcancCadFilmeActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="Bexcluir">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Excluir"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BexcluirActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

@@ -43,7 +43,7 @@ public class IngressoTest {
     public void testGetNome() {
         System.out.println("getNome");
         //public Ingresso(String nome, String sinopse, double valor, double duracao, int quantidade, int classificacao) {
-        Ingresso i = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16);
+        Ingresso i = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16, new Sala());
         String expResult = "Star Wars";
         String result = i.getNome();
         assertEquals(expResult, result);
@@ -56,7 +56,7 @@ public class IngressoTest {
     public void testSetNome() {
         System.out.println("setNome");
         String nome = "Star Wars ep6";
-        Ingresso i1 = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16);
+        Ingresso i1 = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16, new Sala());
         i1.setNome(nome);
 
     }
@@ -67,7 +67,7 @@ public class IngressoTest {
     @Test
     public void testGetValor() {
         System.out.println("getValor");
-        Ingresso i3 = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16);
+        Ingresso i3 = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16, new Sala());
         double expResult = 15;
         double result = i3.getValor();
         assertEquals(expResult, result, 0.0);
@@ -80,7 +80,7 @@ public class IngressoTest {
     public void testSetValor() {
         System.out.println("setValor");
         double valor = 12;
-        Ingresso i4 = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16);
+        Ingresso i4 = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16, new Sala());
         i4.setValor(valor);
     }
 
@@ -90,7 +90,7 @@ public class IngressoTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        Ingresso i = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16);
+        Ingresso i = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16, new Sala());
         String expResult = "Filme: "+i.getNome()+", R$: "+i.getValor() +", Classificação: "+i.getClassificacao()+", Duração: "+i.getDuracao()+", Ingressos Disponíveis: "+ i.getQuantidade();
         //return "Filme: "+nome+", R$: "+valor+ " Classificação: "+ classificacao+ "Duração: "+ duracao+ " Ingressos Disponíveis: "+ quantidade;
         String result = i.toString();
@@ -104,7 +104,7 @@ public class IngressoTest {
     @Test
     public void testGetQuantidade() {
         System.out.println("getQuantidade");
-        Ingresso i5 = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16);
+        Ingresso i5 = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16, new Sala());
         int expResult = 100;
         int result = i5.getQuantidade();
         assertEquals(expResult, result);
@@ -118,7 +118,7 @@ public class IngressoTest {
     public void testSetQuantidade() {
         System.out.println("setQuantidade");
         int quantidade = 120;
-        Ingresso i6 = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16);
+        Ingresso i6 = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16, new Sala());
         i6.setQuantidade(quantidade);
     }
 
@@ -128,7 +128,7 @@ public class IngressoTest {
     @Test
     public void testGetSinopse() {
         System.out.println("getSinopse");
-        Ingresso i7 = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16);
+        Ingresso i7 = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16, new Sala());
         String expResult = "Luke, i´m your father ";
         String result = i7.getSinopse();
         assertEquals(expResult, result);
@@ -142,7 +142,7 @@ public class IngressoTest {
     public void testSetSinopse() {
         System.out.println("setSinopse");
         String sinopse = "ITS A TRAP!";
-        Ingresso i8 = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16);
+        Ingresso i8 = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16, new Sala());
         i8.setSinopse(sinopse);
         
     }
@@ -153,7 +153,7 @@ public class IngressoTest {
     @Test
     public void testGetDuracao() {
         System.out.println("getDuracao");
-        Ingresso i9 = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16);
+        Ingresso i9 = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16, new Sala());
         double expResult = 150;
         double result = i9.getDuracao();
         assertEquals(expResult, result, 0.0);
@@ -167,7 +167,7 @@ public class IngressoTest {
     public void testSetDuracao() {
         System.out.println("setDuracao");
         double duracao = 120;
-        Ingresso i10 = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16);
+        Ingresso i10 = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16, new Sala());
         i10.setDuracao(duracao);
         
     }
@@ -178,7 +178,7 @@ public class IngressoTest {
     @Test
     public void testGetClassificacao() {
         System.out.println("getClassificacao");
-        Ingresso i11 = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16);
+        Ingresso i11 = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16, new Sala());
         int expResult = 16;
         int result = i11.getClassificacao();
         assertEquals(expResult, result);
@@ -192,7 +192,7 @@ public class IngressoTest {
     public void testSetClassificacao() {
         System.out.println("setClassificacao");
         int classificacao = 15;
-        Ingresso i12 = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16);
+        Ingresso i12 = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16, new Sala());
         i12.setClassificacao(classificacao);
         
     }

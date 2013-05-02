@@ -4,11 +4,7 @@
  */
 package vendaingressos;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 /**
@@ -66,7 +62,7 @@ public class ClienteTest {
     /**
      * Test of isEstudante method, of class Cliente.
      */
-    @Test
+    //@Test
     public void testIsEspecial(){
         System.out.println("isEspecial");
         //public Cliente(String nome, String cpf, String email,String senha, double saldo, boolean especial) {
@@ -215,6 +211,8 @@ public class ClienteTest {
         Cliente c7 = new Cliente("Maria", "9014871", "emaildamaria@gmail.com","senhadamaria", 400, false);
         c7.setSenha(senha);
     }
+
+    
    
     
     

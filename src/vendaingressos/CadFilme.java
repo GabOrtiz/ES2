@@ -20,14 +20,14 @@ public class CadFilme extends javax.swing.JFrame{
         initComponents();
         
 
-        Ingresso i = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16, new Sala());
-        VendaIngressos.ingressos.add(i);
-        
-        Ingresso i1 = new Ingresso("Star Wars ep2","Luke, i´m your father muahaha ", 15,150, 100, 16, new Sala());
-        VendaIngressos.ingressos.add(i1);
-        
-        Ingresso i2 = new Ingresso("Star Wars ep3","Luke, i´m your father co cof  *morreu* ", 15,150, 100, 16, new Sala());
-        VendaIngressos.ingressos.add(i2);
+//        Ingresso i = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16, new Sala());
+//        VendaIngressos.ingressos.add(i);
+//        
+//        Ingresso i1 = new Ingresso("Star Wars ep2","Luke, i´m your father muahaha ", 15,150, 100, 16, new Sala());
+//        VendaIngressos.ingressos.add(i1);
+//        
+//        Ingresso i2 = new Ingresso("Star Wars ep3","Luke, i´m your father co cof  *morreu* ", 15,150, 100, 16, new Sala());
+//        VendaIngressos.ingressos.add(i2);
         
     }
     
@@ -52,11 +52,11 @@ public class CadFilme extends javax.swing.JFrame{
         jLabel4 = new javax.swing.JLabel();
         fieldDuracao = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        fieldIngressos = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         fieldClassificacao = new javax.swing.JTextField();
         BcadFilme = new javax.swing.JButton();
         BcancCadFilme = new javax.swing.JButton();
+        Bexcluir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cine Totem");
@@ -71,9 +71,7 @@ public class CadFilme extends javax.swing.JFrame{
 
         jLabel4.setText("Duração em mins:");
 
-        jLabel5.setText("Ingressos:");
-
-        fieldIngressos.setText("150");
+        jLabel5.setText("Ingressos: 150");
 
         jLabel6.setText("Classificação:");
 
@@ -88,6 +86,13 @@ public class CadFilme extends javax.swing.JFrame{
         BcancCadFilme.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BcancCadFilmeActionPerformed(evt);
+            }
+        });
+
+        Bexcluir.setText("Excluir");
+        Bexcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BexcluirActionPerformed(evt);
             }
         });
 
@@ -125,8 +130,9 @@ public class CadFilme extends javax.swing.JFrame{
                             .addComponent(BcadFilme)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(fieldIngressos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(70, 70, 70)))
+                        .addGap(29, 29, 29)
+                        .addComponent(Bexcluir)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BcancCadFilme)
                         .addGap(41, 41, 41)))
@@ -154,13 +160,13 @@ public class CadFilme extends javax.swing.JFrame{
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(fieldIngressos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
                     .addComponent(fieldClassificacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BcadFilme)
-                    .addComponent(BcancCadFilme))
+                    .addComponent(BcancCadFilme)
+                    .addComponent(Bexcluir))
                 .addContainerGap())
         );
 
@@ -170,7 +176,7 @@ public class CadFilme extends javax.swing.JFrame{
     private void BcadFilmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcadFilmeActionPerformed
         Ingresso in = new Ingresso(nomeFilme.getText(), fieldSinopse.getText(), 
                 Double.parseDouble(fieldValor.getText()), Double.parseDouble(fieldDuracao.getText()), 
-                Integer.parseInt(fieldIngressos.getText()), Integer.parseInt(fieldClassificacao.getText()),new Sala());
+                150, Integer.parseInt(fieldClassificacao.getText()),new Sala());
         
         
         VendaIngressos.ingressos.add(in);
@@ -179,7 +185,6 @@ public class CadFilme extends javax.swing.JFrame{
         fieldSinopse.setText("");
         fieldValor.setText("");
         fieldDuracao.setText("");
-        fieldIngressos.setText("");
         fieldClassificacao.setText("");
 
         this.dispose();
@@ -192,6 +197,12 @@ public class CadFilme extends javax.swing.JFrame{
         }
         this.dispose(); 
     }//GEN-LAST:event_BcancCadFilmeActionPerformed
+
+    private void BexcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BexcluirActionPerformed
+        new FrameDelete().setVisible(true);
+        
+        
+    }//GEN-LAST:event_BexcluirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -230,9 +241,9 @@ public class CadFilme extends javax.swing.JFrame{
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BcadFilme;
     private javax.swing.JButton BcancCadFilme;
+    private javax.swing.JButton Bexcluir;
     private javax.swing.JTextField fieldClassificacao;
     private javax.swing.JTextField fieldDuracao;
-    private javax.swing.JTextField fieldIngressos;
     private javax.swing.JTextPane fieldSinopse;
     private javax.swing.JTextField fieldValor;
     private javax.swing.JLabel jLabel1;

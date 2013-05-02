@@ -39,8 +39,10 @@ public class Sala extends JFrame implements MouseListener{
 		this.setLocation((800 - 300) / 2, (600 - 200) / 2);
                 
                 
-               verde = new JLabel(); verde.setIcon(new ImageIcon("E:\\SENAC 2013¹\\ES2\\VendaIngressos\\Cadeiras\\verde.gif"));
-               vermelho = new JLabel();  vermelho.setIcon(new ImageIcon("E:\\SENAC 2013¹\\ES2\\VendaIngressos\\Cadeiras\\vermelha.gif"));
+               verde = new JLabel(); verde.setIcon(new ImageIcon("F:\\SENAC 2013¹\\ES2\\VendaIngressos\\Cadeiras\\verde.gif"));
+               vermelho = new JLabel();  vermelho.setIcon(new ImageIcon("F:\\SENAC 2013¹\\ES2\\VendaIngressos\\Cadeiras\\vermelha.gif"));
+               // E casa
+               // F senac
 	}
     
   
@@ -53,7 +55,9 @@ public class Sala extends JFrame implements MouseListener{
                 for(int x = 1; x<=100; x++){
                     JLabel label = new JLabel();
                     label.addMouseListener(this);
-                    label.setIcon(new ImageIcon("E:\\SENAC 2013¹\\ES2\\VendaIngressos\\Cadeiras\\verde.gif"));
+                    label.setIcon(new ImageIcon("F:\\SENAC 2013¹\\ES2\\VendaIngressos\\Cadeiras\\verde.gif"));
+                    // E casa
+                    // F senac
                     label.setBorder(BorderFactory.createBevelBorder(0));
                     labels.add(label);
                     window.add(label);
@@ -70,28 +74,30 @@ public class Sala extends JFrame implements MouseListener{
               for(JLabel l: labels){
        if(e.getSource().equals(l)&& l.getIcon().toString().equals(verde.getIcon().toString())){
            achou = true;
-            l.setIcon(new ImageIcon("E:\\SENAC 2013¹\\ES2\\VendaIngressos\\Cadeiras\\vermelha.gif"));
+            l.setIcon(new ImageIcon("F:\\SENAC 2013¹\\ES2\\VendaIngressos\\Cadeiras\\vermelha.gif"));
+            // E casa
+            // F senac
             l.repaint();
        }
         
             
               }
-              if( achou = true){ this.dispose();}
+              if( achou == true){ this.dispose();}
               else {JOptionPane.showMessageDialog(rootPane, "Cadeira ocupada, por favor, escolha outra.");}
               
         
     }
 
     @Override
-    public void mousePressed(MouseEvent e) {
+    public void mousePressed(MouseEvent e){
     }
     @Override
-    public void mouseReleased(MouseEvent e) {
+    public void mouseReleased(MouseEvent e){
     }
     @Override
-    public void mouseEntered(MouseEvent e) {
+    public void mouseEntered(MouseEvent e){
     }
     @Override
-    public void mouseExited(MouseEvent e) {
+    public void mouseExited(MouseEvent e){
     }
 }
