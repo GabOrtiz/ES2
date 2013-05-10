@@ -55,7 +55,7 @@ public class Sala extends JFrame implements MouseListener{
                 for(int x = 1; x<=100; x++){
                     JLabel label = new JLabel();
                     label.addMouseListener(this);
-                    label.setIcon(new ImageIcon("F:\\SENAC 2013¹\\ES2\\VendaIngressos\\Cadeiras\\verde.gif"));
+                    label.setIcon(new ImageIcon("C:\\Users\\aluno\\Documents\\GitHub\\ES2\\Cadeiras\\vermelha.gif"));
                     // E casa
                     // F senac
                     label.setBorder(BorderFactory.createBevelBorder(0));
