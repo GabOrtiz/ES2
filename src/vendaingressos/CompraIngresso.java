@@ -15,12 +15,11 @@ import javax.swing.JLabel;
  */
 public class CompraIngresso extends javax.swing.JFrame {
     
-    
+    Conexao c;
     
     public CompraIngresso(){
         
         initComponents();
-        
         
     }
 
@@ -64,6 +63,9 @@ public class CompraIngresso extends javax.swing.JFrame {
 
         jLabel2.setText("Informações:");
 
+        for(String filme : c.filmes){
+            boxFilmes.addItem(filme);
+        }
         atualizar();
         boxFilmes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -208,7 +208,7 @@ public class CadUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_BcancelarActionPerformed
 
     private void BcadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcadastrarActionPerformed
-            Cliente c = new Cliente(fieldNome.getText(), fieldCPF.getText(), fieldEmail.getText(),fieldSenha.getText(), Double.parseDouble(fieldSaldo.getText()), especial.isSelected());
+         Cliente c = new Cliente(fieldNome.getText(), fieldCPF.getText(), fieldEmail.getText(),fieldSenha.getText(), Double.parseDouble(fieldSaldo.getText()), especial.isSelected());
          VendaIngressos.clientes.add(c);
 
         fieldNome.setText("");
