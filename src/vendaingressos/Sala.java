@@ -39,8 +39,8 @@ public class Sala extends JFrame implements MouseListener{
 		this.setLocation((800 - 300) / 2, (600 - 200) / 2);
                 
                 
-               verde = new JLabel(); verde.setIcon(new ImageIcon("F:\\SENAC 2013¹\\ES2\\VendaIngressos\\Cadeiras\\verde.gif"));
-               vermelho = new JLabel();  vermelho.setIcon(new ImageIcon("F:\\SENAC 2013¹\\ES2\\VendaIngressos\\Cadeiras\\vermelha.gif"));
+               verde = new JLabel(); verde.setIcon(new ImageIcon("\\Cadeiras\\verde.gif"));
+               vermelho = new JLabel();  vermelho.setIcon(new ImageIcon("C:\\Users\\aluno\\Documents\\GitHub\\ES2\\Cadeiras\\vermelha.gif"));
                // E casa
                // F senac
 	}
