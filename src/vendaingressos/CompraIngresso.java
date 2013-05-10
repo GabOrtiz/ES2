@@ -15,7 +15,7 @@ import javax.swing.JLabel;
  */
 public class CompraIngresso extends javax.swing.JFrame {
     
-    Conexao c;
+    Conexao c = new Conexao();
     
     public CompraIngresso(){
         
@@ -63,6 +63,7 @@ public class CompraIngresso extends javax.swing.JFrame {
 
         jLabel2.setText("Informações:");
 
+        c.buscaFilmes();
         for(String filme : c.filmes){
             boxFilmes.addItem(filme);
         }

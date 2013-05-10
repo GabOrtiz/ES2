@@ -189,7 +189,7 @@ public class Inicial extends javax.swing.JFrame {
         //vish
         for(Cliente c:VendaIngressos.clientes){
             if(c.getEmail().equalsIgnoreCase(fieldEmailLogin.getText())&& c.getSenha().equalsIgnoreCase(fieldSenhaLogin.getText())){
-            new CompraIngresso().setVisible(true);
+             new CompraIngresso().setVisible(true);
              //CompraIngresso framecompra = new CompraIngresso();
              Caux = c;
              fieldSenhaLogin.setText("");
@@ -197,7 +197,7 @@ public class Inicial extends javax.swing.JFrame {
           }
         
         if(this.isVisible() == false){
-        JOptionPane.showMessageDialog(rootPane, "Erro, cliente não cadastrado, ou senha/login errados.");
+         JOptionPane.showMessageDialog(rootPane, "Erro, cliente não cadastrado, ou senha/login errados.");
         }
             
     }//GEN-LAST:event_LogarActionPerformed

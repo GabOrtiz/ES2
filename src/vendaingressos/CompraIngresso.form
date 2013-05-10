@@ -118,7 +118,7 @@
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="atualizar();"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="for(String filme : c.filmes){&#xa;    boxFilmes.addItem(filme);&#xa;}"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="c.buscaFilmes();&#xa;for(String filme : c.filmes){&#xa;    boxFilmes.addItem(filme);&#xa;}"/>
       </AuxValues>
     </Component>
   </SubComponents>
