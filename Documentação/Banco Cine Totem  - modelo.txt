@@ -1,0 +1,29 @@
+Banco Cine totem - Modelo
+
+create table Usuarios(
+	pkcod_usuario serial primary key,
+	nome varchar(200),
+	login varchar(200),
+	idade integer,
+	senha varchar(200),
+	cpf varchar(200),
+	saldo real,
+	estudante char(1)
+);
+
+create table Filmes (
+	pkcod_filme serial primary key,
+	nome varchar(200),
+	descricao varchar(200),
+	valor real,
+	duracao real,
+	classificacao integer,
+	imagem varchar(200)
+);
+
+create table Salas (
+	pkcod_sala serial primary key,
+	numero_sala integer,
+	fkcod_filme references Filmes(pkcod_filme)
+);
+
