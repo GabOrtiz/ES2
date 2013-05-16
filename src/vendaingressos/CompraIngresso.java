@@ -20,6 +20,7 @@ public class CompraIngresso extends javax.swing.JFrame {
     public CompraIngresso(){
         
         initComponents();
+        setLocationRelativeTo( null ); 
         
     }
 

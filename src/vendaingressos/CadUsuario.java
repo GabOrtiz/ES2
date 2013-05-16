@@ -17,6 +17,7 @@ public class CadUsuario extends javax.swing.JFrame {
      */
     public CadUsuario() {
         initComponents();
+        setLocationRelativeTo( null ); 
         
         Cliente c = new Cliente("Maria", "9014871", "a","a", 400, false);
         VendaIngressos.clientes.add(c);
@@ -50,7 +51,6 @@ public class CadUsuario extends javax.swing.JFrame {
         Bcancelar = new javax.swing.JButton();
         Bcadastrar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cine Totem");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Informações Pessoais"));

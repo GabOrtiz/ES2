@@ -18,6 +18,7 @@ public class CadFilme extends javax.swing.JFrame{
     
     public CadFilme(){
         initComponents();
+        setLocationRelativeTo( null ); 
         
 
 //        Ingresso i = new Ingresso("Star Wars","Luke, i´m your father ", 15,150, 100, 16, new Sala());
@@ -59,7 +60,6 @@ public class CadFilme extends javax.swing.JFrame{
         Bexcluir = new javax.swing.JButton();
         BcancCadFilme = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cine Totem");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Filmes"));

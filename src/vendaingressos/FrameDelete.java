@@ -17,6 +17,7 @@ public class FrameDelete extends javax.swing.JFrame {
      */
     public FrameDelete() {
         initComponents();
+        setLocationRelativeTo( null ); 
         
         
     }
