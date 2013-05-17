@@ -19,8 +19,8 @@ import javax.swing.JOptionPane;
 public class Conexao {
     
     ArrayList<String> filmes = new ArrayList<>();
-    public static Connection connect;
-    public static Statement stmt;   
+    public static  Connection connect;
+    public static  Statement stmt;   
     public static  ResultSet rs;
 
 
@@ -41,16 +41,22 @@ public class Conexao {
   public void conecta()
   {
        try {  
+
+           Class.forName("com.mysql.jdbc.Driver");  
   
-            String url = "jdbc:mysql://localhost:3306/cinema";  
-            String usuario = "root";  
-            String senha = "";  
+           
+            String serverName = "localhost";    //caminho do servidor do BD
+
+            String mydatabase ="cine";        //nome do seu banco de dados
+
+            String url = "jdbc:mysql://" + serverName + "/" + mydatabase;
+
+            String username = "root";        //nome de um usuário de seu BD      
+
+            String password = "";      //sua senha de acesso
+
+            connect = DriverManager.getConnection(url, username, password);
   
-            Class.forName("com.mysql.jdbc.Driver");  
-  
-              
-  
-            connect = DriverManager.getConnection(url, usuario, senha);  
   
             System.out.println("Conexão realizada com sucesso.");  
   
@@ -66,7 +72,7 @@ public class Conexao {
   
   public void buscaFilmes(){
       try { 
-          String query = "SELECT * FROM Cine.Filmes"; 
+          String query = "SELECT * FROM Filmes"; 
           rs = stmt.executeQuery(query); 
           while(rs.next())
           {
