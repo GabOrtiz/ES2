@@ -66,7 +66,7 @@ public class Conexao {
   
   public void buscaFilmes(){
       try { 
-          String query = "SELECT * FROM Filmes"; 
+          String query = "SELECT * FROM Cine.Filmes"; 
           rs = stmt.executeQuery(query); 
           while(rs.next())
           {
