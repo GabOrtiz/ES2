@@ -42,11 +42,11 @@ public class Conexao {
   {
        try {  
   
-            String url = "jdbc:postgresql://localhost:5432/cinema";  
-            String usuario = "postgres";  
-            String senha = "senacrs";  
+            String url = "jdbc:mysql://localhost:3306/cinema";  
+            String usuario = "root";  
+            String senha = "";  
   
-            Class.forName("org.postgresql.Driver");  
+            Class.forName("com.mysql.jdbc.Driver");  
   
               
   
