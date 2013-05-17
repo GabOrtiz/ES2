@@ -42,7 +42,7 @@ public class Conexao {
   {
        try {  
   
-            String url = "jdbc:mysql://localhost:3306/cinema";  
+            String url = "jdbc:mysql://localhost:3306/cine";  
             String usuario = "root";  
             String senha = "";  
   
