@@ -21,7 +21,8 @@ public class Inicial extends javax.swing.JFrame {
      */
     public Inicial(){
         initComponents();
-
+        Conexao c = new Conexao();
+        c.conecta();
     }
 
     
