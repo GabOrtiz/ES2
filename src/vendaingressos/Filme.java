@@ -75,7 +75,7 @@ public class Filme {
     public void cadastrar(){
             try {
                 String query = "INSERT INTO FILMES (nome,descricao,valor,duracao,classificacao) VALUES"
-                       + "('"+this.getNome()+"','"+this.getDescricao()+ "','" + this.getValor()+"','"+this.getDescricao()+"','"+ this.getClassificacao() + "')";
+                       + "("+this.getNome()+","+this.getDescricao()+ "," + this.getValor()+","+this.getDescricao()+","+ this.getClassificacao() + ")";
                 
                 stmt.executeUpdate(query); 
                 stmt.close();
