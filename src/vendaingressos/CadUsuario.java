@@ -18,9 +18,6 @@ public class CadUsuario extends javax.swing.JFrame {
     public CadUsuario() {
         initComponents();
         setLocationRelativeTo( null ); 
-        
-        Cliente c = new Cliente("Maria", "9014871", "a","a", 400, false);
-        VendaIngressos.clientes.add(c);
     }
 
     
@@ -208,8 +205,8 @@ public class CadUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_BcancelarActionPerformed
 
     private void BcadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcadastrarActionPerformed
-         Cliente c = new Cliente(fieldNome.getText(), fieldCPF.getText(), fieldEmail.getText(),fieldSenha.getText(), Double.parseDouble(fieldSaldo.getText()), especial.isSelected());
-         VendaIngressos.clientes.add(c);
+//         Cliente c = new Cliente(fieldNome.getText(), fieldCPF.getText(), fieldEmail.getText(),fieldSenha.getText(), Double.parseDouble(fieldSaldo.getText()), especial.isSelected());
+//         VendaIngressos.clientes.add(c);
 
         fieldNome.setText("");
         fieldCPF.setText("");

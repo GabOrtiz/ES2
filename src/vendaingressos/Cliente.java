@@ -69,9 +69,15 @@ public class Cliente {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    
-    
 
+    public void setLogin(String login){
+        this.login = login;
+    }       
+
+    public String getLogin(){
+        return login;
+    }
+    
     @Override
     public String toString(){
         return "Nome: " + nome + ", CPF: " + cpf + ", Email: " + email + ", Saldo: " + saldo + ", Especial: " + especial;
@@ -80,8 +86,12 @@ public class Cliente {
     
     public void verificaUsuarioLogado(){
         
-        String sql = "SELECT * FROM cine.clientes WHERE "
+        Conexao c = new Conexao();
+        
+        String sql = "SELECT * FROM cine.clientes WHERE login = '" +this.getLogin()+ "' and senha = '"+this.getSenha()+"'";
+        
+        
         
     }
-    
+
 }
