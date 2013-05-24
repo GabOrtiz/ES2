@@ -59,7 +59,11 @@ public class Inicial extends javax.swing.JFrame {
 
         jLabel2.setText("Senha");
 
-        fieldSenhaLogin.setText("jPasswordField1");
+        fieldSenhaLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldSenhaLoginActionPerformed(evt);
+            }
+        });
 
         Logar.setText("Logar");
         Logar.addActionListener(new java.awt.event.ActionListener() {
@@ -91,7 +95,7 @@ public class Inicial extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(90, 90, 90)
                 .addComponent(jLabel1)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -171,21 +175,14 @@ public class Inicial extends javax.swing.JFrame {
     }//GEN-LAST:event_cadFilmeActionPerformed
 
     private void LogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogarActionPerformed
-        //vish
-        for(Cliente c:VendaIngressos.clientes){
-            if(c.getEmail().equalsIgnoreCase(fieldEmailLogin.getText())&& c.getSenha().equalsIgnoreCase(fieldSenhaLogin.getText())){
-             new CompraIngresso().setVisible(true);
-             //CompraIngresso framecompra = new CompraIngresso();
-             Caux = c;
-             fieldSenhaLogin.setText("");
-            }
-          }
-        
-        if(this.isVisible() == false){
-         JOptionPane.showMessageDialog(rootPane, "Erro, cliente não cadastrado, ou senha/login errados.");
-        }
+       
+        Cliente c = new Cliente();
             
     }//GEN-LAST:event_LogarActionPerformed
+
+    private void fieldSenhaLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldSenhaLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fieldSenhaLoginActionPerformed
 
     /**
      * @param args the command line arguments

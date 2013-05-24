@@ -73,15 +73,17 @@ public class Filme {
     
     
     public void cadastrar(){
+            Conexao c = new Conexao();
+        
             try {
-                String query = "INSERT INTO FILMES (nome,descricao,valor,duracao,classificacao) VALUES"
-                       + "("+this.getNome()+","+this.getDescricao()+ "," + this.getValor()+","+this.getDescricao()+","+ this.getClassificacao() + ")";
+                String query = "INSERT INTO cine.filmes (nome,descricao,valor,duracao,classificacao) VALUES"
+                       + "('"+this.getNome()+"','"+this.getDescricao()+ "','" + this.getValor()+"','"+this.getDuracao()+"','"+ this.getClassificacao() + "')";
                 
-                stmt.executeUpdate(query); 
-                stmt.close();
+                c.stmt.executeUpdate(query); 
+                c.stmt.close();
                 
             } catch (SQLException ex) {
-                System.out.println(ex.getErrorCode());
+                ex.printStackTrace();
             }
         
         
