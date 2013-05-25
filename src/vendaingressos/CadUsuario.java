@@ -57,6 +57,11 @@ public class CadUsuario extends javax.swing.JFrame {
         jLabel3.setText("CPF:");
 
         especial.setText("Sou estudante/Idoso.");
+        especial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                especialActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Saldo:");
 
@@ -216,6 +221,10 @@ public class CadUsuario extends javax.swing.JFrame {
 
         this.setVisible(false);
     }//GEN-LAST:event_BcadastrarActionPerformed
+
+    private void especialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_especialActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_especialActionPerformed
 
     /**
      * @param args the command line arguments
