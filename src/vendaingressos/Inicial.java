@@ -142,7 +142,7 @@ public class Inicial extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addGap(31, 31, 31)
                 .addComponent(Logar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         fieldEmailLogin.getAccessibleContext().setAccessibleParent(fieldEmailLogin);
