@@ -9,26 +9,17 @@ package vendaingressos;
  * @author aluno
  */
 public class Cliente {
-    private String nome, cpf, email, senha,login,estudante;
-    private double saldo;
+    String nome, cpf, email, senha,estudante;
+    double saldo;
    
 
     public Cliente(){
     }
 
-    public String isEspecial(){
-        if(estudante == "S"){
-            System.out.println("especial.");
-            return estudante;
-        }
-        else
-            System.out.println("normal.");
-            return estudante;
-    }
+   
+    
 
-    public void setEspecial(String especial) {
-        this.estudante = especial;
-    }
+    
 
     public String getNome(){
         return nome;
@@ -70,28 +61,16 @@ public class Cliente {
         this.senha = senha;
     }
 
-    public void setLogin(String login){
-        this.login = login;
-    }       
-
-    public String getLogin(){
-        return login;
+ public String cadastrarUsuario()
+    {
+       
+        String sql = "INSERT INTO cine.usuarios (nome,login,senha,cpf,saldo) values ('"+getNome()+"','"+getEmail()+"','"+getSenha()+"','"+getSaldo()+"')";
+               
+        return sql;
     }
-    
-    @Override
-    public String toString(){
-        return "Nome: " + nome + ", CPF: " + cpf + ", Email: " + email + ", Saldo: " + saldo ;
-    }
+   
     
     
-    public void verificaUsuarioLogado(){
-        
-        Conexao c = new Conexao();
-        
-        String sql = "SELECT * FROM cine.clientes WHERE login = '" +this.getLogin()+ "' and senha = '"+this.getSenha()+"'";
-        
-        
-        
-    }
+  
 
 }

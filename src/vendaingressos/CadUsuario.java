@@ -15,10 +15,15 @@ public class CadUsuario extends javax.swing.JFrame {
     /**
      * Creates new form CadUsuario
      */
+    
+  
     public CadUsuario() {
         initComponents();
         setLocationRelativeTo( null ); 
+        
+        
     }
+
 
     
     //public static ArrayList<Cliente> clientes = new ArrayList<Cliente>();
@@ -212,14 +217,21 @@ public class CadUsuario extends javax.swing.JFrame {
     private void BcadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcadastrarActionPerformed
 //         Cliente c = new Cliente(fieldNome.getText(), fieldCPF.getText(), fieldEmail.getText(),fieldSenha.getText(), Double.parseDouble(fieldSaldo.getText()), especial.isSelected());
 //         VendaIngressos.clientes.add(c);
+        
+        Cliente c = new Cliente();
+        c.setNome(fieldNome.getText());
+        c.setCpf(fieldCPF.getText());
+        c.setEmail(fieldEmail.getText());
+        c.setSaldo(Double.parseDouble(fieldSaldo.getText()));
+        c.setSenha(fieldSenha.getText());
+        
+        c.cadastrarUsuario();
+        
+        
 
-        fieldNome.setText("");
-        fieldCPF.setText("");
-        fieldEmail.setText("");
-        fieldSenha.setText("");
-        fieldSaldo.setText("");
+        
 
-        this.setVisible(false);
+        
     }//GEN-LAST:event_BcadastrarActionPerformed
 
     private void especialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_especialActionPerformed
