@@ -4,7 +4,10 @@
  */
 package vendaingressos;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -16,7 +19,7 @@ public class CadUsuario extends javax.swing.JFrame {
      * Creates new form CadUsuario
      */
     
-  
+  Conexao d = new Conexao();
     public CadUsuario() {
         initComponents();
         setLocationRelativeTo( null ); 
@@ -219,6 +222,7 @@ public class CadUsuario extends javax.swing.JFrame {
 //         VendaIngressos.clientes.add(c);
         
         Cliente c = new Cliente();
+      
         c.setNome(fieldNome.getText());
         c.setCpf(fieldCPF.getText());
         c.setEmail(fieldEmail.getText());
@@ -226,7 +230,11 @@ public class CadUsuario extends javax.swing.JFrame {
         c.setSenha(fieldSenha.getText());
         
         c.cadastrarUsuario();
-        
+       try {
+            d.stmt.executeUpdate(c.cadastrarUsuario());  
+        } catch (SQLException ex) {
+            Logger.getLogger(CadUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        } 
         
 
         

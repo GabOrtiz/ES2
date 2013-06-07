@@ -9,17 +9,21 @@ package vendaingressos;
  * @author aluno
  */
 public class Cliente {
-    String nome, cpf, email, senha,estudante;
+    String nome, cpf, email, senha;
     double saldo;
-   
+   int cod;
 
     public Cliente(){
     }
 
-   
-    
+    public int getCod() {
+        return cod;
+    }
 
-    
+    public void setCod(int cod) {
+        this.cod = cod;
+    }
+     
 
     public String getNome(){
         return nome;
@@ -64,7 +68,8 @@ public class Cliente {
  public String cadastrarUsuario()
     {
        
-        String sql = "INSERT INTO cine.usuarios (nome,login,senha,cpf,saldo) values ('"+getNome()+"','"+getEmail()+"','"+getSenha()+"','"+getSaldo()+"')";
+       
+        String sql = "INSERT INTO cine.usuarios (nome,login,senha,cpf,saldo) values ('"+getNome()+"','"+getEmail()+"','"+getSenha()+"','"+getCpf()+"','"+getSaldo()+"')";
                
         return sql;
     }
