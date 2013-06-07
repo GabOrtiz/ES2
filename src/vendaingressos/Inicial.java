@@ -4,7 +4,11 @@
  */
 package vendaingressos;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,6 +23,8 @@ public class Inicial extends javax.swing.JFrame {
     /**
      * Creates new form Inicial
      */
+    
+    String ps;
     public Inicial(){
         initComponents();
         Conexao c = new Conexao();
@@ -176,8 +182,13 @@ public class Inicial extends javax.swing.JFrame {
 
     private void LogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogarActionPerformed
        
-        Cliente c = new Cliente();
-            
+        Conexao c = new Conexao();
+        try {
+            c.login();
+        } catch (SQLException ex) {
+            Logger.getLogger(Inicial.class.getName()).log(Level.SEVERE, null, ex);
+        }
+          
     }//GEN-LAST:event_LogarActionPerformed
 
     private void fieldSenhaLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldSenhaLoginActionPerformed

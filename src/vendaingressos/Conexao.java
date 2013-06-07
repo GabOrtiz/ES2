@@ -86,6 +86,30 @@ public class Conexao {
           
       }
   }
+  public void login() throws SQLException
+  {
+       String CadastroSQL = "select count(*) from cine.usuarios WHERE login=? and senha=?";  
+  
+          rs = stmt.executeQuery(CadastroSQL);  
+        try {
+            rs.next();  // erro se não retornar nada?  
+        } catch (SQLException ex) {
+            Logger.getLogger(Inicial.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            if (rs.getInt(1) >= 1) {  
+                // login encontrada e correto  
+                JOptionPane.showMessageDialog(null, "SUCESSO!");
+                 
+            } else {  
+                // usuario não encontrado ou senha incorreta  
+  
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Inicial.class.getName()).log(Level.SEVERE, null, ex);
+        }
+  }
+  
   
    
 }
