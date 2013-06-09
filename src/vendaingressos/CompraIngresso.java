@@ -41,7 +41,6 @@ public class CompraIngresso extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         boxFilmes = new javax.swing.JComboBox();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cine Totem");
 
         jScrollPane2.setViewportView(jTextPane1);

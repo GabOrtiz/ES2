@@ -200,16 +200,18 @@ public class Inicial extends javax.swing.JFrame {
         Conexao c = new Conexao();
          
         try {
-            c.login();
-            java.awt.EventQueue.invokeLater(new Runnable(){
+            
+            c.login() ;
+                  java.awt.EventQueue.invokeLater(new Runnable(){
             public void run() {
                 new CompraIngresso().setVisible(true);
             }
         });
+            
         } catch (SQLException ex) {
             Logger.getLogger(Inicial.class.getName()).log(Level.SEVERE, null, ex);
         }
-          
+    
     }//GEN-LAST:event_LogarActionPerformed
 
     /**

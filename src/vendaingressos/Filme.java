@@ -7,6 +7,7 @@ package vendaingressos;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import static vendaingressos.Conexao.rs;
 import static vendaingressos.Conexao.stmt;
 
@@ -76,11 +77,12 @@ public class Filme {
             Conexao c = new Conexao();
         
             try {
-                String query = "INSERT INTO cine.filmes (nome,descricao,valor,duracao,classificacao) VALUES"
+                String query = "INSERT INTO cine.filmes (nome,sinopse,valor,duracao,classificacao) VALUES"
                        + "('"+this.getNome()+"','"+this.getDescricao()+ "','" + this.getValor()+"','"+this.getDuracao()+"','"+ this.getClassificacao() + "')";
                 
                 c.stmt.executeUpdate(query); 
                 c.stmt.close();
+                JOptionPane.showMessageDialog(null, "Cadastrado!");
                 
             } catch (SQLException ex) {
                 ex.printStackTrace();
