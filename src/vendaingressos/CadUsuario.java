@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -232,6 +233,7 @@ public class CadUsuario extends javax.swing.JFrame {
         c.cadastrarUsuario();
        try {
             d.stmt.executeUpdate(c.cadastrarUsuario());  
+            JOptionPane.showMessageDialog(null, "Cadastro realizado!");
         } catch (SQLException ex) {
             Logger.getLogger(CadUsuario.class.getName()).log(Level.SEVERE, null, ex);
         } 

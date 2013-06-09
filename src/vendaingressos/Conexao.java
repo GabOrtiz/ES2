@@ -88,7 +88,9 @@ public class Conexao {
   }
   public void login() throws SQLException
   {
-       String CadastroSQL = "select count(*) from cine.usuarios WHERE login=? and senha=?";  
+      Inicial i = new Inicial();
+     
+       String CadastroSQL = "select count(*) from cine.usuarios WHERE login='i.getLog()' and senha='i.getSenh()'";  
   
           rs = stmt.executeQuery(CadastroSQL);  
         try {

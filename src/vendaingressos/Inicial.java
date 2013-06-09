@@ -31,6 +31,26 @@ public class Inicial extends javax.swing.JFrame {
         setLocationRelativeTo( null ); 
         c.conecta();
     }
+    
+    String log;
+    String senh;
+
+    public String getLog() {
+        return log;
+    }
+
+    public void setLog(String log) {
+        this.log = log;
+    }
+
+    public String getSenh() {
+        return senh;
+    }
+
+    public void setSenh(String senh) {
+        this.senh = senh;
+    }
+    
 
     
     
@@ -50,11 +70,11 @@ public class Inicial extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         fieldEmailLogin = new javax.swing.JTextField();
-        fieldSenhaLogin = new javax.swing.JPasswordField();
         Logar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         newCadastro = new javax.swing.JButton();
         cadFilme = new javax.swing.JButton();
+        fieldSenhaLogin = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cine Totem");
@@ -64,12 +84,6 @@ public class Inicial extends javax.swing.JFrame {
         jLabel1.setText("Email");
 
         jLabel2.setText("Senha");
-
-        fieldSenhaLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fieldSenhaLoginActionPerformed(evt);
-            }
-        });
 
         Logar.setText("Logar");
         Logar.addActionListener(new java.awt.event.ActionListener() {
@@ -101,7 +115,7 @@ public class Inicial extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(90, 90, 90)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -117,8 +131,8 @@ public class Inicial extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(fieldEmailLogin)
-                    .addComponent(fieldSenhaLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE))
+                    .addComponent(fieldSenhaLogin)
+                    .addComponent(fieldEmailLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addGap(117, 117, 117))
@@ -136,17 +150,16 @@ public class Inicial extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
                             .addComponent(newCadastro)
-                            .addComponent(cadFilme))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(fieldSenhaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cadFilme)))
                     .addComponent(jLabel4))
-                .addGap(31, 31, 31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(fieldSenhaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
                 .addComponent(Logar)
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
         fieldEmailLogin.getAccessibleContext().setAccessibleParent(fieldEmailLogin);
-        fieldSenhaLogin.getAccessibleContext().setAccessibleParent(fieldSenhaLogin);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -182,18 +195,22 @@ public class Inicial extends javax.swing.JFrame {
 
     private void LogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogarActionPerformed
        
+        setLog(fieldEmailLogin.getText());
+        setSenh(fieldSenhaLogin.getText());
         Conexao c = new Conexao();
+         
         try {
             c.login();
+            java.awt.EventQueue.invokeLater(new Runnable(){
+            public void run() {
+                new CompraIngresso().setVisible(true);
+            }
+        });
         } catch (SQLException ex) {
             Logger.getLogger(Inicial.class.getName()).log(Level.SEVERE, null, ex);
         }
           
     }//GEN-LAST:event_LogarActionPerformed
-
-    private void fieldSenhaLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldSenhaLoginActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fieldSenhaLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,7 +250,7 @@ public class Inicial extends javax.swing.JFrame {
     private javax.swing.JButton Logar;
     private javax.swing.JButton cadFilme;
     private javax.swing.JTextField fieldEmailLogin;
-    private javax.swing.JPasswordField fieldSenhaLogin;
+    private javax.swing.JTextField fieldSenhaLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
