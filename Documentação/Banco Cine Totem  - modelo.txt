@@ -1,27 +1,26 @@
 Banco Cine totem - Modelo
 
-CREATE TABLE Usuarios(
-	pkcod_usuario INTEGER AUTO_INCREMENT,
+CREATE TABLE cine.usuarios(
+	pkcod_usuario INTEGER AUTO_INCREMENT primary key,
 	nome VARCHAR(200),
 	login VARCHAR(200),	
 	senha VARCHAR(200),
 	cpf VARCHAR(200),
 	saldo REAL,	
-	PRIMARY KEY(pkcod_usuario)
+	
 );
 
-CREATE TABLE Filmes (
-	pkcod_filme INTEGER AUTO_INCREMENT,
+CREATE TABLE cine.filmes (
+	pkcod_filme INTEGER AUTO_INCREMENT primary key,
 	nome VARCHAR(200),
-	descricao VARCHAR(200),
-	valor REAL,
-	duracao REAL,
+	sinopse VARCHAR(200),
+	valor double,
+	duracao double,
 	classificacao INTEGER,
-	imagem VARCHAR(200),
-	PRIMARY KEY(pkcod_filme)
+	
 );
 
-CREATE TABLE Salas (
+CREATE TABLE cine.salas (
 	pkcod_sala INTEGER AUTO_INCREMENT,
 	fkcod_filme INTEGER,	
 	numero_sala INTEGER,
