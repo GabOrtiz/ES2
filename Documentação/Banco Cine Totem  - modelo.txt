@@ -3,12 +3,10 @@ Banco Cine totem - Modelo
 CREATE TABLE Usuarios(
 	pkcod_usuario INTEGER AUTO_INCREMENT,
 	nome VARCHAR(200),
-	login VARCHAR(200),
-	idade INTEGER,
+	login VARCHAR(200),	
 	senha VARCHAR(200),
 	cpf VARCHAR(200),
-	saldo REAL,
-	estudante CHAR(1),
+	saldo REAL,	
 	PRIMARY KEY(pkcod_usuario)
 );
 
