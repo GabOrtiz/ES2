@@ -187,7 +187,14 @@ public class Inicial extends javax.swing.JFrame {
         Conexao con = new Conexao();
         String[] result = con.confereLogin(c.getEmail(), c.getSenha());
             if(result[0] == "erro"){
-                JOptionPane.showInputDialog(result[1]);
+                JOptionPane.showMessageDialog(null,result[1]);
+            } else {
+          /* Create and display the form */
+                java.awt.EventQueue.invokeLater(new Runnable(){
+                 public void run() {
+                new CompraIngresso().setVisible(true);
+         }
+        });
             }
         }
     }//GEN-LAST:event_LogarActionPerformed

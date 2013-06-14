@@ -72,7 +72,7 @@ public class Conexao {
   
   public void buscaFilmes(){
       try { 
-          String query = "SELECT * FROM Filmes"; 
+          String query = "SELECT * FROM Cine.Filmes"; 
           rs = stmt.executeQuery(query); 
           while(rs.next())
           {
@@ -96,15 +96,17 @@ public class Conexao {
      c.setSenha(senha);
 
      try {
-         String query = "SELECT * FROM Usuarios where email = " +c.getEmail()+ "AND senha =" +c.getSenha();
+         String query = "SELECT * FROM cine.Usuarios where login = '"+c.getEmail()+"' AND senha = '" +c.getSenha() + "'";
          rs = stmt.executeQuery(query);
          
-         if(rs.getRow() > 0) {
+         if(rs.next()) {
              result[0] = "ok";
          } else {
              result[0] = "erro";
              result[1] = "Usuario não encontrado!";
          }
+         
+         stmt.close();
          
          return result;
          
