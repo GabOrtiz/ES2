@@ -86,33 +86,34 @@ public class Conexao {
           
       }
   }
-  public void login() throws SQLException
-  {
-      Inicial i = new Inicial();
+  public String[] confereLogin(String login,String senha) {
+  
      
-       String CadastroSQL = "select count(*) from cine.usuarios WHERE login='i.getLog()' and senha='i.getSenh()'";  
-  
-          rs = stmt.executeQuery(CadastroSQL);  
-        try {
-            rs.next();  // erro se não retornar nada?  
-        } catch (SQLException ex) {
-            Logger.getLogger(Inicial.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            if (rs.getInt(1) >= 1) {  
-                // login encontrada e correto  
-                JOptionPane.showMessageDialog(null, "SUCESSO!");
-                 
-            } else {  
-                // usuario não encontrado ou senha incorreta  
-  
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(Inicial.class.getName()).log(Level.SEVERE, null, ex);
-        }
+     String result[] = new String[2];
+      
+     Cliente c = new Cliente();
+     c.setEmail(login);
+     c.setSenha(senha);
+
+     try {
+         String query = "SELECT * FROM Usuarios where email = " +c.getEmail()+ "AND senha =" +c.getSenha();
+         rs = stmt.executeQuery(query);
+         
+         if(rs.getRow() > 0) {
+             result[0] = "ok";
+         } else {
+             result[0] = "erro";
+             result[1] = "Usuario não encontrado!";
+         }
+         
+         return result;
+         
+     } catch ( SQLException sqlex ){
+         result[0] = "erro";
+         return result;
+     }
+     
+     
   }
-  
-  
-   
 }
 

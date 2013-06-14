@@ -32,25 +32,6 @@ public class Inicial extends javax.swing.JFrame {
         c.conecta();
     }
     
-    String log;
-    String senh;
-
-    public String getLog() {
-        return log;
-    }
-
-    public void setLog(String log) {
-        this.log = log;
-    }
-
-    public String getSenh() {
-        return senh;
-    }
-
-    public void setSenh(String senh) {
-        this.senh = senh;
-    }
-    
 
     
     
@@ -195,23 +176,20 @@ public class Inicial extends javax.swing.JFrame {
 
     private void LogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogarActionPerformed
        
-        setLog(fieldEmailLogin.getText());
-        setSenh(fieldSenhaLogin.getText());
-        Conexao c = new Conexao();
-         
-        try {
-            
-            c.login() ;
-                  java.awt.EventQueue.invokeLater(new Runnable(){
-            public void run() {
-                new CompraIngresso().setVisible(true);
+        Cliente c = new Cliente();
+        
+        c.setEmail(fieldEmailLogin.getText());
+        c.setSenha(fieldSenhaLogin.getText());
+        
+        if(c.getEmail().isEmpty() || c.getSenha().isEmpty()){
+            JOptionPane.showMessageDialog(null,"Preencha os campos corretamente.");
+       } else {
+        Conexao con = new Conexao();
+        String[] result = con.confereLogin(c.getEmail(), c.getSenha());
+            if(result[0] == "erro"){
+                JOptionPane.showInputDialog(result[1]);
             }
-        });
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(Inicial.class.getName()).log(Level.SEVERE, null, ex);
         }
-    
     }//GEN-LAST:event_LogarActionPerformed
 
     /**

@@ -66,16 +66,11 @@ public class Cliente {
     }
 
  public String cadastrarUsuario()
-    {
-       
-       
+    {  
         String sql = "INSERT INTO cine.usuarios (nome,login,senha,cpf,saldo) values ('"+getNome()+"','"+getEmail()+"','"+getSenha()+"','"+getCpf()+"','"+getSaldo()+"')";
                
         return sql;
     }
-   
-    
-    
-  
 
+ 
 }
