@@ -25,24 +25,10 @@ public class CompraIngresso extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo( null ); 
         
+        
     }
-    public void addJcombo()
-    {
-         try { 
-          String query = "SELECT nome FROM cine.filmes"; 
-          rs = stmt.executeQuery(query); 
-          while(rs.next())
-          {
-             boxFilmes.addItem(rs.getString(1));
-          }
-          stmt.close();
-          
-      } catch ( SQLException sqlex )
-      {
-          
-          
-      }
-    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -147,8 +133,23 @@ public class CompraIngresso extends javax.swing.JFrame {
     }
     
     private void boxFilmesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxFilmesActionPerformed
-       // jTextPane1.setText(boxFilmes.getSelectedItem().toString());
+        //jTextPane1.setText(boxFilmes.getSelectedItem().toString());
       //  boxFilmes.addItem("a");
+         try { 
+          String query = "SELECT nome FROM cine.filmes"; 
+          rs = stmt.executeQuery(query); 
+          while(rs.next())
+          {
+              boxFilmes.addItem(rs.getString(2));
+             
+          }
+          stmt.close();
+          
+      } catch ( SQLException sqlex )
+      {
+          
+          
+      }
        
     }//GEN-LAST:event_boxFilmesActionPerformed
 
