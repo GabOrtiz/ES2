@@ -5,9 +5,12 @@
 package vendaingressos;
 
 import java.awt.GridLayout;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import static vendaingressos.Conexao.rs;
+import static vendaingressos.Conexao.stmt;
 
 /**
  *
@@ -22,6 +25,23 @@ public class CompraIngresso extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo( null ); 
         
+    }
+    public void addJcombo()
+    {
+         try { 
+          String query = "SELECT nome FROM cine.filmes"; 
+          rs = stmt.executeQuery(query); 
+          while(rs.next())
+          {
+             boxFilmes.addItem(rs.getString(1));
+          }
+          stmt.close();
+          
+      } catch ( SQLException sqlex )
+      {
+          
+          
+      }
     }
 
     /**
@@ -127,7 +147,9 @@ public class CompraIngresso extends javax.swing.JFrame {
     }
     
     private void boxFilmesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxFilmesActionPerformed
-        jTextPane1.setText(boxFilmes.getSelectedItem().toString());
+       // jTextPane1.setText(boxFilmes.getSelectedItem().toString());
+      //  boxFilmes.addItem("a");
+       
     }//GEN-LAST:event_boxFilmesActionPerformed
 
     private void BCancelarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BCancelarCompraActionPerformed
@@ -190,6 +212,7 @@ public class CompraIngresso extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable(){
             public void run() {
                 new CompraIngresso().setVisible(true);
+                
             }
         });
     }
