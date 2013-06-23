@@ -225,6 +225,7 @@ public class CadFilme extends javax.swing.JFrame{
         fieldValor.setText("");
         fieldDuracao.setText("");
         fieldClassificacao.setText("");
+        
 
         this.dispose();
     }//GEN-LAST:event_BcadFilmeActionPerformed
