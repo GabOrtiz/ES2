@@ -57,9 +57,9 @@
                   <Component id="jScrollPane2" min="-2" pref="127" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="Bcomprar" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="BCancelarCompra" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BCancelarCompra" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="27" max="32767" attributes="0"/>
           </Group>

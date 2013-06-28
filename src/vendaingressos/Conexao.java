@@ -11,6 +11,7 @@ package vendaingressos;
  */
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -18,7 +19,7 @@ import javax.swing.JOptionPane;
 
 public class Conexao {
     
-   public ArrayList<String> filmes = new ArrayList<>();
+    public HashMap<String,String> filmes = new HashMap<>();
     public static  Connection connect;
     public static  Statement stmt;   
     public static  ResultSet rs;
@@ -74,13 +75,14 @@ public class Conexao {
     public void buscaFilmes(){
     
       try { 
-          String query = "SELECT * FROM Cine.Filmes"; 
+          String query = "SELECT nome,sinopse FROM Cine.Filmes"; 
           rs = stmt.executeQuery(query);
           System.out.println("Passo dali");
           while(rs.next())
           {
-             filmes.add(rs.getString("nome"));
-             JOptionPane.showMessageDialog(null, "ok");
+              System.out.println(rs.getString("nome") + "-" + rs.getString("sinopse"));
+              filmes.put(rs.getString("nome"),rs.getString("sinopse"));
+            
           }
           stmt.close();
           

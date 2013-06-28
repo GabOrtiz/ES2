@@ -8,8 +8,10 @@ import java.awt.GridLayout;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Set;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import static vendaingressos.Conexao.rs;
 import static vendaingressos.Conexao.stmt;
 
@@ -18,7 +20,7 @@ import static vendaingressos.Conexao.stmt;
  * @author Ortiz
  */
 public class CompraIngresso extends javax.swing.JFrame {
-    
+    String text;
     Conexao c = new Conexao();
     
     public CompraIngresso(){
@@ -30,9 +32,20 @@ public class CompraIngresso extends javax.swing.JFrame {
         Conexao c = new Conexao();
         c.buscaFilmes();
 
-        for(int i = 0;i<c.filmes.size(); i++) {
-            boxFilmes.addItem(c.filmes.get(i));
-        }
+//        for(int i = 0;i<c.filmes.size(); i++) {
+//            boxFilmes.addItem(c.filmes.get(i));
+//        }
+        
+        Set<String> chaves = c.filmes.keySet();  
+        for (String chave : chaves)  
+        {  
+            if(chave != null)  
+                 boxFilmes.addItem(chave);  
+             }  
+       
+        text = c.filmes.get(boxFilmes.getSelectedItem().toString());
+        
+        
         
     }
     
@@ -115,7 +128,7 @@ public class CompraIngresso extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Bcomprar)
                     .addComponent(BCancelarCompra))
                 .addContainerGap(27, Short.MAX_VALUE))
@@ -135,9 +148,9 @@ public class CompraIngresso extends javax.swing.JFrame {
     }
     
     private void boxFilmesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxFilmesActionPerformed
-
-
-        
+            
+             jTextPane1.setText(text);
+            
     }//GEN-LAST:event_boxFilmesActionPerformed
 
     private void BCancelarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BCancelarCompraActionPerformed
