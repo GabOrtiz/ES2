@@ -12,6 +12,9 @@ import java.util.ArrayList;
  */
 public class CadFilme extends javax.swing.JFrame{
 
+   
+
+
     /**
      * Creates new form CadFilme
      */
@@ -204,7 +207,7 @@ public class CadFilme extends javax.swing.JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void BcadFilmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcadFilmeActionPerformed
-        
+        Conexao c = new Conexao();
         Filme f = new Filme();
         f.setNome(nomeFilme.getText());
         f.setDescricao(fieldSinopse.getText());
@@ -212,7 +215,6 @@ public class CadFilme extends javax.swing.JFrame{
         f.setDuracao(Double.parseDouble(fieldDuracao.getText()));
         f.setClassificacao(Integer.parseInt(fieldClassificacao.getText()));
         f.cadastrar();
-        
         
         Ingresso in = new Ingresso(nomeFilme.getText(), fieldSinopse.getText(), 
                 Double.parseDouble(fieldValor.getText()), Double.parseDouble(fieldDuracao.getText()), 

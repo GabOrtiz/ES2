@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
 
 public class Conexao {
     
-    ArrayList<String> filmes = new ArrayList<>();
+   public ArrayList<String> filmes = new ArrayList<>();
     public static  Connection connect;
     public static  Statement stmt;   
     public static  ResultSet rs;
@@ -70,22 +70,28 @@ public class Conexao {
 
   }
   
-  public void buscaFilmes(){
+  
+    public void buscaFilmes(){
+    
       try { 
           String query = "SELECT * FROM Cine.Filmes"; 
-          rs = stmt.executeQuery(query); 
+          rs = stmt.executeQuery(query);
+          System.out.println("Passo dali");
           while(rs.next())
           {
              filmes.add(rs.getString("nome"));
+             JOptionPane.showMessageDialog(null, "ok");
           }
           stmt.close();
           
       } catch ( SQLException sqlex )
       {
-          
+          sqlex.printStackTrace();
           
       }
   }
+  
+
   public String[] confereLogin(String login,String senha) {
   
      
@@ -106,8 +112,7 @@ public class Conexao {
              result[1] = "Usuario não encontrado!";
          }
          
-         stmt.close();
-         
+        
          return result;
          
      } catch ( SQLException sqlex ){

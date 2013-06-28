@@ -7,6 +7,7 @@ package vendaingressos;
 import java.awt.GridLayout;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import static vendaingressos.Conexao.rs;
@@ -24,22 +25,14 @@ public class CompraIngresso extends javax.swing.JFrame {
         
         initComponents();
         setLocationRelativeTo( null ); 
-                 try { 
-          String query = "SELECT nome FROM cine.filmes"; 
-          rs = stmt.executeQuery(query); 
-          while(rs.next())
-          {
-              boxFilmes.addItem(rs.getString("nome"));
-             
-          }
-          stmt.close();
-          
-      } catch ( SQLException sqlex )
-      {
-          
-          
-      }
         
+        
+        Conexao c = new Conexao();
+        c.buscaFilmes();
+
+        for(int i = 0;i<c.filmes.size(); i++) {
+            boxFilmes.addItem(c.filmes.get(i));
+        }
         
     }
     
@@ -84,10 +77,6 @@ public class CompraIngresso extends javax.swing.JFrame {
 
         jLabel2.setText("Informações:");
 
-        c.buscaFilmes();
-        for(String filme : c.filmes){
-            boxFilmes.addItem(filme);
-        }
         atualizar();
         boxFilmes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,15 +95,13 @@ public class CompraIngresso extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Bcomprar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(BCancelarCompra))
                     .addComponent(boxFilmes, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(58, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(Bcomprar)
-                .addGap(122, 122, 122)
-                .addComponent(BCancelarCompra)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,10 +135,9 @@ public class CompraIngresso extends javax.swing.JFrame {
     }
     
     private void boxFilmesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxFilmesActionPerformed
-        jTextPane1.setText(boxFilmes.getSelectedItem().toString());
-      //  boxFilmes.addItem("a");
 
-       
+
+        
     }//GEN-LAST:event_boxFilmesActionPerformed
 
     private void BCancelarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BCancelarCompraActionPerformed
