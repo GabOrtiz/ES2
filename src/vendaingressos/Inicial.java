@@ -234,7 +234,7 @@ public class Inicial extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable(){
             public void run() {
-                new Inicial().setVisible(true);
+                new Inicial()sdsadsadsa.setVisible(true);
             }
         });
     }

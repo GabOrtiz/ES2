@@ -77,7 +77,7 @@ public class Conexao {
       try { 
           String query = "SELECT nome,descricao FROM Cine.Filmes"; 
           rs = stmt.executeQuery(query);
-          System.out.println("Passo dali");
+          //System.out.println("Passo dali");
           while(rs.next())
           {
               System.out.println(rs.getString("nome") + "-" + rs.getString("descricao"));
