@@ -75,16 +75,16 @@ public class Conexao {
     public void buscaFilmes(){
     
       try { 
-          String query = "SELECT nome,sinopse FROM Cine.Filmes"; 
+          String query = "SELECT nome,descricao FROM Cine.Filmes"; 
           rs = stmt.executeQuery(query);
           System.out.println("Passo dali");
           while(rs.next())
           {
-              System.out.println(rs.getString("nome") + "-" + rs.getString("sinopse"));
-              filmes.put(rs.getString("nome"),rs.getString("sinopse"));
+              System.out.println(rs.getString("nome") + "-" + rs.getString("descricao"));
+              filmes.put(rs.getString("nome"),rs.getString("descricao"));
             
           }
-          stmt.close();
+       
           
       } catch ( SQLException sqlex )
       {
