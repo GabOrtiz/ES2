@@ -76,8 +76,8 @@ public class VendaIngressos{
                             }
                             else especial = false;
                             //public Cliente(String nome, String cpf, String email,String senha, double saldo, boolean especial) {
-                            Cliente cli = new Cliente(n, c, e, s, p, especial);
-                            clientes.add(cli);
+//                            Cliente cli = new Cliente(n, c, e, s, p, especial);
+//                            clientes.add(cli);
                             
                             break;
                             
@@ -120,15 +120,15 @@ public class VendaIngressos{
                         }
                     }
                     
-                    for(Cliente c: clientes){
-                        
-                        if (c.getNome().equalsIgnoreCase(nc)) {
-                            if(c.isEspecial()){
-                                c.setSaldo(c.getSaldo() - (preco / 2));
-                            }
-                            else c.setSaldo(c.getSaldo() - preco);
-                        }
-                    }
+//                    for(Cliente c: clientes){
+//                        
+//                        if (c.getNome().equalsIgnoreCase(nc)) {
+//                            if(c.isEspecial()){
+//                                c.setSaldo(c.getSaldo() - (preco / 2));
+//                            }
+//                            else c.setSaldo(c.getSaldo() - preco);
+//                        }
+//                    }
                     break;
                     
 

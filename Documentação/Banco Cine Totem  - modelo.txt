@@ -1,0 +1,29 @@
+CREATE TABLE cine.usuarios(
+	pkcod_usuario INTEGER AUTO_INCREMENT,
+	nome VARCHAR(200),
+	login VARCHAR(200),	
+	senha VARCHAR(200),
+	cpf VARCHAR(200),
+	saldo REAL,
+	primary key(pkcod_usuario)
+	
+);
+
+CREATE TABLE cine.filmes (
+	pkcod_filme INTEGER AUTO_INCREMENT,
+	nome VARCHAR(200),
+	sinopse VARCHAR(200),
+	valor double,
+	duracao double,
+	classificacao INTEGER,
+	primary key(pkcod_filme)
+	
+);
+
+CREATE TABLE cine.salas (
+	pkcod_sala INTEGER AUTO_INCREMENT,
+	fkcod_filme INTEGER,	
+	numero_sala INTEGER,
+	FOREIGN KEY (fkcod_filme) REFERENCES Filmes(pkcod_filme),
+	PRIMARY KEY(pkcod_sala)
+);

@@ -4,7 +4,11 @@
  */
 package vendaingressos;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,12 +19,15 @@ public class CadUsuario extends javax.swing.JFrame {
     /**
      * Creates new form CadUsuario
      */
+    
+  Conexao d = new Conexao();
     public CadUsuario() {
         initComponents();
+        setLocationRelativeTo( null ); 
         
-        Cliente c = new Cliente("Maria", "9014871", "a","a", 400, false);
-        VendaIngressos.clientes.add(c);
+        
     }
+
 
     
     //public static ArrayList<Cliente> clientes = new ArrayList<Cliente>();
@@ -50,7 +57,6 @@ public class CadUsuario extends javax.swing.JFrame {
         Bcancelar = new javax.swing.JButton();
         Bcadastrar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cine Totem");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Informações Pessoais"));
@@ -60,6 +66,11 @@ public class CadUsuario extends javax.swing.JFrame {
         jLabel3.setText("CPF:");
 
         especial.setText("Sou estudante/Idoso.");
+        especial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                especialActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Saldo:");
 
@@ -208,17 +219,34 @@ public class CadUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_BcancelarActionPerformed
 
     private void BcadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcadastrarActionPerformed
-            Cliente c = new Cliente(fieldNome.getText(), fieldCPF.getText(), fieldEmail.getText(),fieldSenha.getText(), Double.parseDouble(fieldSaldo.getText()), especial.isSelected());
-         VendaIngressos.clientes.add(c);
+//         Cliente c = new Cliente(fieldNome.getText(), fieldCPF.getText(), fieldEmail.getText(),fieldSenha.getText(), Double.parseDouble(fieldSaldo.getText()), especial.isSelected());
+//         VendaIngressos.clientes.add(c);
+        
+        Cliente c = new Cliente();
+      
+        c.setNome(fieldNome.getText());
+        c.setCpf(fieldCPF.getText());
+        c.setEmail(fieldEmail.getText());
+        c.setSaldo(Double.parseDouble(fieldSaldo.getText()));
+        c.setSenha(fieldSenha.getText());
+        
+        c.cadastrarUsuario();
+       try {
+            d.stmt.executeUpdate(c.cadastrarUsuario());  
+            JOptionPane.showMessageDialog(null, "Cadastro realizado!");
+        } catch (SQLException ex) {
+            Logger.getLogger(CadUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+        
 
-        fieldNome.setText("");
-        fieldCPF.setText("");
-        fieldEmail.setText("");
-        fieldSenha.setText("");
-        fieldSaldo.setText("");
+        
 
-        this.setVisible(false);
+        
     }//GEN-LAST:event_BcadastrarActionPerformed
+
+    private void especialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_especialActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_especialActionPerformed
 
     /**
      * @param args the command line arguments

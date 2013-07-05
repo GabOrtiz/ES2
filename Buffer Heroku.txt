@@ -1,0 +1,236 @@
+Welcome to Git (version 1.8.1.2-preview20130201)
+
+
+Run 'git help git' to display the help index.
+Run 'git help <command>' to display help for specific commands.
+Kristy@KRISTY-PC ~ (master)
+$ gti clone ssh://git@github.com:kristynoms/ES2.git
+sh.exe": gti: command not found
+Kristy@KRISTY-PC ~ (master)
+$ git clone ssh://git@github.com:kristynoms/ES2.git
+Cloning into 'ES2'...
+ssh: github.com:kristynoms: no address associated with name
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+Kristy@KRISTY-PC ~ (master)
+$ git clone git@github.com:kristynoms/ES2.git
+Cloning into 'ES2'...
+The authenticity of host 'github.com (204.232.175.90)' can't be established.
+RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,204.232.175.90' (RSA) to the list of know
+n hosts.
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+Kristy@KRISTY-PC ~ (master)
+$ heroku login
+Enter your Heroku credentials.
+Email: kristyrec@gmail.com
+Password (typing will be hidden):
+Authentication successful.
+Kristy@KRISTY-PC ~ (master)
+$ git clone git@github.com:kristynoms/ES2.git
+Cloning into 'ES2'...
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+Kristy@KRISTY-PC ~ (master)
+$ git clone ssh://git@github.com:kristynoms/ES2.git
+Cloning into 'ES2'...
+ssh: github.com:kristynoms: no address associated with name
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+Kristy@KRISTY-PC ~ (master)
+$ git clone http://github.com/kristynoms/ES2.git
+Cloning into 'ES2'...
+remote: Counting objects: 433, done.
+remote: Compressing objects: 100% (150/150), done.
+remote: Total 433 (delta 242), reused 424 (delta 237)
+Receiving objects: 100% (433/433), 15.84 MiB | 446 KiB/s, done.
+Resolving deltas: 100% (242/242), done.
+Kristy@KRISTY-PC ~ (master)
+$
+
+
+Welcome to Git (version 1.8.1.2-preview20130201)
+
+
+Run 'git help git' to display the help index.
+Run 'git help <command>' to display help for specific commands.
+Kristy@KRISTY-PC ~ (master)
+$ ls
+Adobe Flash Builder 4.6
+AppData
+Application Data
+Contacts
+Cookies
+Desktop
+Documents
+Downloads
+Dropbox
+ES2
+Favorites
+Links
+Local Settings
+Music
+My Documents
+NTUSER.DAT
+NTUSER.DAT{6cced2f1-6e01-11de-8bed-001e0bcd1824}.TM.blf
+NTUSER.DAT{6cced2f1-6e01-11de-8bed-001e0bcd1824}.TMContainer00000000000000000001
+.regtrans-ms
+NTUSER.DAT{6cced2f1-6e01-11de-8bed-001e0bcd1824}.TMContainer00000000000000000002
+.regtrans-ms
+NetHood
+Oracle
+Pictures
+PrintHood
+Recent
+Saved Games
+Searches
+SendTo
+Start Menu
+Templates
+Tracing
+Videos
+VirtualBox VMs
+_netrc
+dwhelper
+ntuser.dat.LOG1
+ntuser.dat.LOG2
+ntuser.ini
+Kristy@KRISTY-PC ~ (master)
+$ cd ES2/
+Kristy@KRISTY-PC ~/ES2 (master)
+$
+Cadeiras/
+Compra.jpg
+Documentação/
+FilmesTela.jpg
+Product backlog.xlsx
+Product backlog_Dyeniffer.xlsx
+VALORES DE FILMES EM EXIBIÇÃO_ROSENI.txt
+build.xml
+lib/
+loginTela.jpg
+manifest.mf
+mysql-connector-java-3.0.17-ga-bin.jar
+mysql-connector-java-5.1.25.zip
+mysqlconnector/
+nbproject/
+src/
+telas.jpg
+userTela.jpg
+Kristy@KRISTY-PC ~/ES2 (master)
+$
+Cadeiras/
+Compra.jpg
+Documentação/
+FilmesTela.jpg
+Product backlog.xlsx
+Product backlog_Dyeniffer.xlsx
+VALORES DE FILMES EM EXIBIÇÃO_ROSENI.txt
+build.xml
+lib/
+loginTela.jpg
+manifest.mf
+mysql-connector-java-3.0.17-ga-bin.jar
+mysql-connector-java-5.1.25.zip
+mysqlconnector/
+nbproject/
+src/
+telas.jpg
+userTela.jpg
+Kristy@KRISTY-PC ~/ES2 (master)
+$
+Cadeiras/
+Compra.jpg
+Documentação/
+FilmesTela.jpg
+Product backlog.xlsx
+Product backlog_Dyeniffer.xlsx
+VALORES DE FILMES EM EXIBIÇÃO_ROSENI.txt
+build.xml
+lib/
+loginTela.jpg
+manifest.mf
+mysql-connector-java-3.0.17-ga-bin.jar
+mysql-connector-java-5.1.25.zip
+mysqlconnector/
+nbproject/
+src/
+telas.jpg
+userTela.jpg
+Kristy@KRISTY-PC ~/ES2 (master)
+$ git remote add esii http://github.com/kristynoms/ES2.git
+Kristy@KRISTY-PC ~/ES2 (master)
+$ git push esii master
+Username for 'http://github.com': kristynoms
+Password for 'http://kristynoms@github.com':
+To http://github.com/kristynoms/ES2.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'http://github.com/kristynoms/ES2.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
+hint: before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+Kristy@KRISTY-PC ~/ES2 (master)
+$ git remote add heroku http://github.com/kristynoms/ES2.git
+Kristy@KRISTY-PC ~/ES2 (master)
+$ git push heroku master
+Username for 'http://github.com': kristynoms
+Password for 'http://kristynoms@github.com':
+To http://github.com/kristynoms/ES2.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'http://github.com/kristynoms/ES2.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
+hint: before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+Kristy@KRISTY-PC ~/ES2 (master)
+$ git pull ES2
+fatal: 'ES2' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+Kristy@KRISTY-PC ~/ES2 (master)
+$ git pull ESii
+fatal: 'ESii' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+Kristy@KRISTY-PC ~/ES2 (master)
+$ git pull esii
+remote: Counting objects: 5, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 1), reused 4 (delta 1)
+Unpacking objects: 100% (4/4), done.
+From http://github.com/kristynoms/ES2
+ * [new branch]      Collaborators -> esii/Collaborators
+ * [new branch]      master     -> esii/master
+You asked to pull from the remote 'esii', but did not specify
+a branch. Because this is not the default configured remote
+for your current branch, you must specify a branch on the command line.
+Kristy@KRISTY-PC ~/ES2 (master)
+$ git pull esii master
+From http://github.com/kristynoms/ES2
+ * branch            master     -> FETCH_HEAD
+Updating 33856c0..586a83e
+Fast-forward
+ Buffer Heroku.txt |  61 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ Thumbs.db         | Bin 0 -> 11776 bytes
+ 2 files changed, 61 insertions(+)
+ create mode 100644 Buffer Heroku.txt
+ create mode 100644 Thumbs.db
+Kristy@KRISTY-PC ~/ES2 (master)
+$
